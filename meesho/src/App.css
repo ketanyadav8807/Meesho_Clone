@@ -1,38 +1,185 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* #f43397 */
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.contactBox {
+  padding: 0px 10px;
+  height: 90px;
+  border-bottom: 1px solid #acbbbc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.firstView {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.title img {
+  width: 220px;
+  height: 65px;
+  margin-top: 5px;
+}
+
+.inputField {
+  position: relative;
+  margin-left: 10px;
+}
+
+.input {
+  width: 490px;
+  height: 70px;
+  outline: none;
+  border: none;
+  caret-color: #f43397;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 4px;
+  padding-left: 50px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.input:focus {
+  box-shadow: 0 3px 5px 0px rgb(20 20 20 / 10%);
+}
+
+.searchIcon {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.closeIcon:hover {
+  cursor: pointer;
+}
+
+.secondView {
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.getApp {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.getApp p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 500;
+  margin: 0px 10px;
+}
+
+.getApp:hover {
+  cursor: pointer;
+  color: #f43397;
+  border-bottom: 4px solid #f43397;
+}
+
+.divider {
+  width: 2px;
+  height: 50px;
+  background-color: #acbbbc;
+  margin: 0px 20px;
+  opacity: 0.6;
+}
+
+.divider2 {
+  width: 2px;
+  height: 50px;
+  background-color: #acbbbc;
+  margin-left: 20px;
+  opacity: 0.6;
+}
+
+.supplier {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.supplier p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 500;
+  margin: 0px 5px;
+}
+
+.supplier:hover {
+  cursor: pointer;
+}
+
+.user {
+  width: 15%;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile {
+  height: 90px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  line-height: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.profile p {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile:hover {
+  cursor: pointer;
+  color: #f43397;
+  border-bottom: 4px solid #f43397;
+}
+
+.cart {
+  line-height: 15px;
+}
+
+.cart p {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 500;
+}
+
+.cart:hover {
+  cursor: pointer;
 }
