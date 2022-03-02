@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Mier';
+    src: local('Mier A Light Italic'), local('Mier-A-Light-Italic'),
+        url('MierA-LightItalic.woff2') format('woff2'),
+        url('MierA-LightItalic.woff') format('woff'),
+        url('MierA-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }
