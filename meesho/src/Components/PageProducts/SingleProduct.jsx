@@ -7,24 +7,33 @@ import {
   Typography,
   CardContent,
 } from "@mui/material";
+
+/**
+ * 
+ * @param {string} images - image url
+  @param {string} title - title for the product 
+  @param {string} originalPrice striked out original price
+  @param {string} discountedPrice current payable price
+  @param {string} rating rating from 0 to 5 (background changes color accourding to the rating)
+  the free delivery is applicable if discountedPrice is greater than 300 
+ * @returns single grid item to be placed under a grid container, requires above params
+ */
+
 export const SingleProduct = ({
   images,
   title,
   originalPrice,
   discountedPrice,
-  freeDelivery,
   rating,
 }) => {
   let ratingBgColor = "green";
 
-  if(rating < 2){
+  if (rating < 2) {
     ratingBgColor = "red";
-     
-  }
-  else if(rating >2 && rating < 3.5){
+  } else if (rating > 2 && rating < 3.5) {
     ratingBgColor = "orange";
   }
-  
+
   return (
     <Grid
       item
@@ -90,20 +99,36 @@ export const SingleProduct = ({
               18% off
             </Typography>
           </Box>
-          <Typography
-            align="left"
-            component="p"
-            sx={{
-              display: { freeDelivery },
-              padding: "1px 2px",
-              backgroundColor: "rgb(249, 249, 249)",
-              width: "fit-content",
-              fontSize: "14px",
-              borderRadius: "5px",
-            }}
-          >
-            free Delivery
-          </Typography>
+          {discountedPrice > 300 ? (
+            <Typography
+              align="left"
+              component="p"
+              sx={{
+                padding: "1px 2px",
+                backgroundColor: "rgb(249, 249, 249)",
+                width: "fit-content",
+                fontSize: "14px",
+                borderRadius: "5px",
+              }}
+            >
+              free Delivery
+            </Typography>
+          ) : (
+            <Typography
+              align="left"
+              component="p"
+              sx={{
+                padding: "1px 2px",
+                backgroundColor: "rgb(249, 249, 249)",
+                width: "fit-content",
+                fontSize: "14px",
+                borderRadius: "5px",
+              }}
+            >
+              Delivery Rs.70
+            </Typography>
+          )}
+
           <Box
             sx={{
               display: "flex",
@@ -123,7 +148,7 @@ export const SingleProduct = ({
                 borderRadius: "40px",
                 border: "1px solid rgb(249, 249, 249)",
                 marginTop: "5px",
-                backgroundColor : ratingBgColor
+                backgroundColor: ratingBgColor,
               }}
             >
               {rating} &#9733;

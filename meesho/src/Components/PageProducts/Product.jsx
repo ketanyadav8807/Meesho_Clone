@@ -1,31 +1,57 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import {
-  Button,
-  Grid,
-  Typography,
-  IconButton,
-  Pagination,
-  PaginationItem,
-} from "@mui/material";
+import { Button, Grid, Pagination, PaginationItem } from "@mui/material";
 import { SingleProduct } from "./SingleProduct";
 import { Box } from "@mui/system";
-export const Product = () => {
+
+/**
+ * @param {string} fetchURL url from where data is to be fetched and displayed
+ * @returns JSX Element Products by fetching the db.json, working pagination
+ */
+
+export const Product = ({ fetchURL }) => {
   const [data, setData] = useState([]);
-  let begin = 0;
-  let end = 5;
+  const [begin, setBegin] = useState(0);
+  const [end, setEnd] = useState(5);
+
+  const NextButton = () => {
+    return (
+      <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
+        NEXT
+      </Button>
+    );
+  };
+
+  const PrevButton = () => {
+    return begin >= 5 ? (
+      <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => prev()}>
+        PREVIOUS
+      </Button>
+    ) : (
+      <></>
+    );
+  };
+
   useEffect(() => {
-    fetch(
-      `https://my-json-server.typicode.com/shubham168/testing_json_server/products?_start=${begin}&_end=${end}`
-    )
+    fetch(`${fetchURL}?_start=${begin}&_end=${end}`)
       .then((res) => res.json())
       .then((d) => {
         setData(d);
-        console.log(d);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [begin, end]);
+
+  const next = () => {
+    setBegin((prev) => prev + 5);
+    setEnd((prev) => prev + 5);
+  };
+  const prev = () => {
+    if (begin >= 5) {
+      setBegin((prev) => prev - 5);
+      setEnd((prev) => prev - 5);
+    }
+  };
   return (
     <>
       <Grid
@@ -43,7 +69,6 @@ export const Product = () => {
           padding: "0% 2%",
         }}
         p={1}
-        
       >
         {data.map((item) => (
           <SingleProduct
@@ -53,6 +78,8 @@ export const Product = () => {
             originalPrice={item.original_price}
             discountedPrice={item.discounted_price}
             rating={item.rating}
+            onClickNext={next}
+            onClickPrev={prev}
           />
         ))}
       </Grid>
@@ -61,11 +88,11 @@ export const Product = () => {
           count={10}
           color="primary"
           sx={{ textAlign: "center" }}
-          hidePrevButton
+          // hidePrevButton
           renderItem={(item) => (
             <PaginationItem
               variant="text"
-              components={{ next: NextButton }}
+              components={{ previous: PrevButton, next: NextButton }}
               {...item}
             />
           )}
@@ -73,8 +100,4 @@ export const Product = () => {
       </Box>
     </>
   );
-};
-
-const NextButton = () => {
-  return <Typography color="primary" sx={{ fontWeight: 700 }}>NEXT</Typography>;
 };
