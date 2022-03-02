@@ -1,9 +1,19 @@
 @font-face {
-    font-family: 'Mier';
-    src: local('Mier A Light Italic'), local('Mier-A-Light-Italic'),
-        url('MierA-LightItalic.woff2') format('woff2'),
-        url('MierA-LightItalic.woff') format('woff'),
-        url('MierA-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'Mier-Bold';
+    src: local('Mier A Bold'), local('Mier-A-Bold'),
+        url('MierA-Bold.woff2') format('woff2'),
+        url('MierA-Bold.woff') format('woff'),
+        url('MierA-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Mier-Book';
+    src: local('Mier A Book'), local('Mier-A-Book'),
+        url('MierA-Book.woff2') format('woff2'),
+        url('MierA-Book.woff') format('woff'),
+        url('MierA-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }

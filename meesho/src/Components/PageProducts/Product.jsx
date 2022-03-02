@@ -72,6 +72,7 @@ export const Product = ({ fetchURL }) => {
       >
         {data.map((item) => (
           <SingleProduct
+            ref={item}
             key={item.id}
             images={item.images[0]}
             title={item.title}
