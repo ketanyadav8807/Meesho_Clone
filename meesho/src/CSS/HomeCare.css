@@ -1,0 +1,78 @@
+.homecareView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url("https://images.meesho.com/images/marketing/1646055706531.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.firstHomeCareImg {
+    position: absolute;
+    left: 500px;
+    bottom: 135px;
+}
+
+.firstHomeCareImg img {
+    width: 250px;
+    height: 420px;
+}
+
+.BedsheetBtn {
+    position: absolute;
+    left: 500px;
+    bottom: 60px;
+}
+
+.BedsheetBtn img {
+    width: 250px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.secondHomeCareImg {
+    position: absolute;
+    right: 350px;
+    bottom: 135px;
+}
+
+.secondHomeCareImg img {
+    width: 250px;
+    height: 420px;
+}
+
+.KitchenWareBtn {
+    position: absolute;
+    right: 350px;
+    bottom: 60px;
+}
+
+.KitchenWareBtn img {
+    width: 250px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.thirdHomeCareImg {
+    position: absolute;
+    right: 80px;
+    bottom: 135px;
+}
+
+.thirdHomeCareImg img {
+    width: 250px;
+    height: 420px;
+}
+
+.CarpetBtn {
+    position: absolute;
+    right: 80px;
+    bottom: 60px;
+}
+
+.CarpetBtn img {
+    width: 250px;
+    height: 60px;
+    object-fit: contain;
+}
