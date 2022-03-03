@@ -8,12 +8,12 @@ export const Sub_Navbar = () => {
 
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar" onMouseLeave={() => setData(0)}>
                 <ul>
-                    <li className="nav-item" onMouseEnter={() => setData(1)}>
+                    <li className="nav-item" onMouseEnter={() => setData(1)} onMouseLeave={() => setData(0)}>
                         <Link to="/home">Women Ethic</Link>
                     </li>
-                    <li className="nav-item" onMouseEnter={() => setData(2)}>
+                    <li className="nav-item" onMouseEnter={() => setData(2)} onMouseLeave={() => setData(0)}>
                         <Link to="/about">Women Western</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(3)}>

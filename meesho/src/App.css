@@ -88,7 +88,7 @@
   height: 90px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  padding-top: 30px;
 }
 
 .getApp p {
@@ -153,9 +153,10 @@
   height: 90px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 20px;
   line-height: 15px;
+  position: relative;
 }
 
 .profile p {
@@ -168,6 +169,69 @@
   cursor: pointer;
   color: #f43397;
   border-bottom: 4px solid #f43397;
+}
+
+.profileDetail {
+  position: absolute;
+  top: 90px;
+  width: 320px;
+  height: 240px;
+  z-index: 5;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 0px 3px rgb(20 20 20 / 5%);
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hrDivider1 {
+  width: 100%;
+  height: 0.7px;
+  background-color: #acbbbc;
+}
+
+.logoutView {
+  display: flex;
+  align-items: center;
+}
+
+.logoutView p {
+  font-size: 23px;
+  color: black;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.userView {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userView h2 {
+  color: black;
+  font-weight: 600;
+}
+
+.userView p {
+  font-size: 18px;
+  color: black;
+  margin-left: 20px;
+}
+
+.userContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.userContent p {
+  margin: 10px 0;
 }
 
 .cart {
@@ -329,6 +393,7 @@
   border-bottom: 1px solid #acbbbc;
   border-left: 1px solid #acbbbc;
   border-right: 1px solid #acbbbc;
+  box-shadow: 0 2px 0px 3px rgb(20 20 20 / 5%);
   background-color: white;
   padding: 20px;
 }
