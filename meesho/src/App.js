@@ -15,5 +15,8 @@ function App() {
         <Route path='/about' element={<Home />} />
       </Routes>
       <Footer />
-          )
+    </div>
+  )
 }
+
+export default App
