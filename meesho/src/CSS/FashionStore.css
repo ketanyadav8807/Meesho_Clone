@@ -1,0 +1,42 @@
+.FashionView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url("https://images.meesho.com/images/marketing/1646054607872.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.firstFashionImg {
+    position: absolute;
+    left: 35px;
+    bottom: 35px;
+}
+
+.firstFashionImg img {
+    width: 495px;
+    height: 520px;
+}
+
+.secondFashionImg {
+    position: absolute;
+    left: 550px;
+    bottom: 35px;
+}
+
+.secondFashionImg img {
+    width: 380px;
+    height: 360px;
+}
+
+.thirdFashionImg {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+}
+
+.thirdFashionImg img {
+    width: 380px;
+    height: 360px;
+}
