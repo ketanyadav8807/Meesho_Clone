@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    background-color: #FDEBF0;
+    font-family: sans-serif;
+}
+.mainSignupBox{
+    width: 28%;
+    margin: 50px auto;
+    background-color: white;
+}
+.img{
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+.PhoneNumDiv{
+    display: flex;
+}
+.TelInp{
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #ccc;
+}
+.upperPart{
+    text-align: left;
+    margin: 40px 0px 0px 30px;
+}
+.SendOTP{
+    border: none;
+    background-color: #F43397;
+    color: white;
+    padding: 13px;
+    width: 90%;
+    margin-top: 40px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+.lowerPart{
+    margin-top: 180px;
+}
+.textColor{
+    color: #F43397;
+}
