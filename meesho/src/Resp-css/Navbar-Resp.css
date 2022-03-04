@@ -1,0 +1,112 @@
+@media (min-width:1335px) and (max-width:1533px) {
+    .leftView {
+        width: 55%;
+    }
+
+    .inputField {
+        width: 450px;
+    }
+
+    .rightView {
+        width: 45%;
+    }
+
+    .app {
+        padding-top: 31px;
+    }
+
+    .app h3 {
+        font-size: 20px;
+    }
+
+    .cdd {
+        margin: 0px 10px;
+    }
+
+    .cdd h3 {
+        font-size: 20px;
+    }
+
+    .profile h3 {
+        font-size: 20px;
+    }
+
+    .dd h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:1145px) and (max-width:1334px) {
+    .leftView {
+        width: 50%;
+    }
+
+    .inputField {
+        width: 400px;
+    }
+
+    .rightView {
+        width: 50%;
+    }
+
+    .app {
+        padding-top: 33px;
+    }
+
+    .app h3 {
+        font-size: 18px;
+    }
+
+    .cdd {
+        margin: 0px 10px;
+    }
+
+    .cdd h3 {
+        font-size: 18px;
+    }
+
+    .profile h3 {
+        font-size: 18px;
+    }
+
+    .dd h3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1146px) {
+    .leftView {
+        width: 50%;
+    }
+
+    .inputField {
+        width: 350px;
+    }
+
+    .rightView {
+        width: 50%;
+    }
+
+    .app {
+        padding-top: 33px;
+    }
+
+    .app h3 {
+        font-size: 16px;
+    }
+
+    .cdd h3 {
+        font-size: 16px;
+    }
+
+    .profile h3 {
+        font-size: 16px;
+    }
+
+    .dd h3 {
+        font-size: 16px
+    }
+
+}
+
+@media (min-width:992px) and (max-width:1199px) {}

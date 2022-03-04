@@ -72,6 +72,9 @@ const Home = () => {
             <div className="products">
                 <p>Products For You</p>
             </div>
+            <div className='productsList'>
+
+            </div>
         </div>
     )
 }

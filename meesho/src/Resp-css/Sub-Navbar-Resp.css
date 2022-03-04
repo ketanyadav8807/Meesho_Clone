@@ -1,0 +1,32 @@
+@media (min-width:1335px) and (max-width:1533px) {
+    .navbar ul li {
+        padding-top: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:1145px) and (max-width:1334px) {
+    .navbar ul li {
+        padding-top: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 15px;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1146px) {
+    .navbar ul li {
+        padding-top: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width:992px) and (max-width:1199px) {}

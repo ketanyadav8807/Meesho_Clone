@@ -1,3 +1,256 @@
 {
-    
+    "homeProducts": [
+        {
+            "id": 1,
+            "category": "Sarees",
+            "title": "WETLESS RAINBOW ZARI",
+            "original_price": 416,
+            "discounted_price": 316,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/22251579/de26c_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.9,
+            "seller_id": 1
+        },
+        {
+            "id": 2,
+            "category": "Sarees",
+            "title": "SGI Fancy Heavy Daani",
+            "original_price": 314,
+            "discounted_price": 220,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/77640244/zrdqn_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 2.4,
+            "seller_id": 2
+        },
+        {
+            "id": 3,
+            "category": "Sarees",
+            "title": "Kanchipuram Silk Orange",
+            "original_price": 676,
+            "discounted_price": 576,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/31989314/6875b_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 2.9,
+            "seller_id": 3
+        },
+        {
+            "id": 4,
+            "category": "Sarees",
+            "title": "RIDDHI IKKAT SILK",
+            "original_price": 553,
+            "discounted_price": 453,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/74643927/dfr6e_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.6,
+            "seller_id": 4
+        },
+        {
+            "id": 5,
+            "category": "Sarees",
+            "title": "WETLESS RAINBOW ZARI",
+            "original_price": 416,
+            "discounted_price": 316,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/25502156/373a0_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.9,
+            "seller_id": 1
+        },
+        {
+            "id": 6,
+            "category": "Sarees",
+            "title": "WETLESS RAINBOW ZARI",
+            "original_price": 416,
+            "discounted_price": 316,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/72348118/wwk37_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.9,
+            "seller_id": 1
+        },
+        {
+            "id": 7,
+            "category": "Sarees",
+            "title": "SGI Fancy Heavy Daani",
+            "original_price": 314,
+            "discounted_price": 220,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/11198202/bfd4a_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 2.4,
+            "seller_id": 2
+        },
+        {
+            "id": 8,
+            "category": "Sarees",
+            "title": "Kanchipuram Silk Orange",
+            "original_price": 676,
+            "discounted_price": 576,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/79128874/sbbol_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 2.9,
+            "seller_id": 3
+        },
+        {
+            "id": 9,
+            "category": "Sarees",
+            "title": "RIDDHI IKKAT SILK",
+            "original_price": 553,
+            "discounted_price": 453,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/75674247/wdn9s_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.6,
+            "seller_id": 4
+        },
+        {
+            "id": 10,
+            "category": "Sarees",
+            "title": "WETLESS RAINBOW ZARI",
+            "original_price": 416,
+            "discounted_price": 316,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/25502156/373a0_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.9,
+            "seller_id": 1
+        },
+        {
+            "id": 11,
+            "category": "Sarees",
+            "title": "RIDDHI IKKAT SILK",
+            "original_price": 553,
+            "discounted_price": 453,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/48071094/cf0q8_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.6,
+            "seller_id": 4
+        },
+        {
+            "id": 12,
+            "category": "Sarees",
+            "title": "WETLESS RAINBOW ZARI",
+            "original_price": 416,
+            "discounted_price": 316,
+            "sizes": [
+                "Free Size"
+            ],
+            "images": [
+                "https://images.meesho.com/images/products/44066589/9hee1_512.jpg"
+            ],
+            "details": {
+                "Fabric": "Chiffon",
+                "Pattern": "Self Design",
+                "Multipack": "Single",
+                "Description": "Best qaualtiy "
+            },
+            "rating": 3.9,
+            "seller_id": 1
+        }
+    ]
 }

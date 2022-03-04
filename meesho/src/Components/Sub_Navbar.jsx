@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
-import '../App.css'
+import '../CSS/Sub_Navbar.css'
+import '../Resp-css/Sub-Navbar-Resp.css'
 
 export const Sub_Navbar = () => {
 
@@ -10,10 +11,10 @@ export const Sub_Navbar = () => {
         <>
             <nav className="navbar" onMouseLeave={() => setData(0)}>
                 <ul>
-                    <li className="nav-item" onMouseEnter={() => setData(1)} onMouseLeave={() => setData(0)}>
+                    <li className="nav-item" onMouseEnter={() => setData(1)} >
                         <Link to="/home">Women Ethic</Link>
                     </li>
-                    <li className="nav-item" onMouseEnter={() => setData(2)} onMouseLeave={() => setData(0)}>
+                    <li className="nav-item" onMouseEnter={() => setData(2)} >
                         <Link to="/about">Women Western</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(3)}>
