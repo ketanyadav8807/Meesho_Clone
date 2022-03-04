@@ -65,9 +65,9 @@ export const Product = ({ fetchURL }) => {
       <div style={{margin:"1% 1%"}}>
         <h2>{title}</h2>
 
-        <h4 style={{marginTop:"1% "}}>
-          showing {begin}-{end} of {total} Products
-        </h4>
+        <p style={{marginTop:"1%", fontSize:"16px" }}>
+        <span style={{ fontWeight:"600" }}>Showing {begin}-{end}</span> of {total} Products
+        </p>
       </div>
       <Grid
         container
@@ -108,7 +108,7 @@ export const Product = ({ fetchURL }) => {
         sx={{ display: "flex", margin: "4% auto", justifyContent: "center" }}
       >
         <Pagination
-          count={data.length / 5 + 1}
+          count={Math.round(total / 5) }
           color="primary"
           sx={{ textAlign: "center" }}
           // hidePrevButton
