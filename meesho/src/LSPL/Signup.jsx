@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import TextField from '@material-ui/core/TextField';
 import style from "./signup.module.css"
 
 export const Signup = () => {
+    const [phoneNum, setPhoneNum] = useState("");
+
+    const sendPhoneNum = (phoneNum) =>{
+        if(phoneNum.length === 10){
+            const data = {
+                "Num": phoneNum,
+            }
+            fetch("https://meesho-db.herokuapp.com/User",{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+        }
+        else{
+            alert("Invalid Phone Number")
+        }
+    
+    }
+
   return (
     <div className={style.body}>
         
@@ -9,12 +29,14 @@ export const Signup = () => {
             <div className={style.img}><img src='https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg' className={style.img}/></div>
             <div className={style.upperPart}>
                 <h3>Sign Up to view your profile</h3>
-                <div><p>Country</p></div>
+                <div className={style.Country}>Country</div>
+
                 <div className={style.PhoneNumDiv}>
-                    <h3><span>IN</span>+91</h3>
-                    <input type="tel" placeholder='Phone Number' className={style.TelInp}/>
+                    <h4 className={style.h4IN}><span className={style.IN}>IN</span>+91</h4>
+                    <TextField id="standard-basic" label="Phone Number" onChange={(e)=> setPhoneNum(e.currentTarget.value)}/>
                 </div>
-                <div><button className={style.SendOTP}>Send OTP</button></div>
+
+                <div><button className={style.SendOTP} onClick={()=> sendPhoneNum(phoneNum)}>Send OTP</button></div>
             </div>
         
             <div className={style.lowerPart}>
