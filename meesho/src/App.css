@@ -9,15 +9,7 @@
 .container {
   width: 100%;
   height: 100vh;
-}
-
-.contactBox {
-  padding: 0px 10px;
-  height: 90px;
-  border-bottom: 1px solid #acbbbc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  overflow-x: hidden;
 }
 
 .firstView {
@@ -33,84 +25,43 @@
 }
 
 .inputField {
-  position: relative;
-  margin-left: 10px;
+  width: 80%;
+  /* margin-left: 10px; */
 }
 
-.input {
-  width: 490px;
-  height: 70px;
-  outline: none;
-  border: none;
-  caret-color: #f43397;
-  border: 1px solid rgb(153, 153, 153);
-  border-radius: 4px;
-  padding-left: 50px;
-  margin-left: 10px;
-  font-size: 20px;
-}
+.input {}
 
-.input::placeholder {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
-.input:focus {
-  box-shadow: 0 3px 5px 0px rgb(20 20 20 / 10%);
-}
+.searchIcon {}
 
-.searchIcon {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-}
-
-.closeIcon {
-  position: absolute;
-  top: 20px;
-  right: 10px;
-}
-
-.closeIcon:hover {
-  cursor: pointer;
-}
 
 .secondView {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   align-items: center;
+  background-color: #666666;
 }
 
 .getApp {
+  width: 200px;
+  background-color: #666666;
   height: 90px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  padding-top: 30px;
 }
 
 .getApp p {
   font-size: 20px;
-  letter-spacing: 1px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: 500;
-  margin: 0px 10px;
 }
 
-.getApp:hover {
-  cursor: pointer;
-  color: #f43397;
-  border-bottom: 4px solid #f43397;
-}
+
 
 .divider {
   width: 2px;
   height: 50px;
-  background-color: #acbbbc;
-  margin: 0px 20px;
-  opacity: 0.6;
 }
 
 .divider2 {
@@ -121,11 +72,6 @@
   opacity: 0.6;
 }
 
-.supplier {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 
 .supplier p {
   font-size: 20px;
@@ -139,313 +85,11 @@
   cursor: pointer;
 }
 
-.user {
-  width: 15%;
-  height: 90px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-}
 
-.profile {
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 15px;
-}
+
 
 .profile p {
   font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-family: 500;
-}
-
-.profile:hover {
-  cursor: pointer;
-  color: #f43397;
-  border-bottom: 4px solid #f43397;
-}
-
-.cart {
-  line-height: 15px;
-}
-
-.cart p {
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: 500;
-}
-
-.cart:hover {
-  cursor: pointer;
-}
-
-.footer {
-  width: 100%;
-  background-color: #f9f9f9;
-  padding: 50px 30px 70px 30px;
-}
-
-.firstSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 40px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.subTitle {
-  font-size: 22px;
-  font-weight: 400;
-  color: #666666;
-  line-height: 28px;
-  margin: 20px 0;
-}
-
-.content {
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  color: #666666;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.subContent {
-  font-size: 22px;
-  letter-spacing: 1px;
-  margin-top: 15px;
-  font-weight: 600;
-  color: #666666;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.contactTitle {
-  font-size: 25px;
-  letter-spacing: 1px;
-  font-weight: 600;
-  color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.contactIcons {
-  display: flex;
-  flex-direction: row;
-  width: 250px;
-  justify-content: space-between;
-}
-
-.contactIcons img {
-  width: 30px;
-  height: 30px;
-  margin: 15px 0px;
-}
-
-.download {
-  width: 460px;
-  margin: 15px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.download img {
-  width: 220px;
-  height: 55px;
-}
-
-.accordion {
-  margin-top: 50px;
-  border: 0.2px solid #acbbbc;
-  border-radius: 4px;
-}
-
-.accordionDet {
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar {
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #acbbbc;
-  padding: 0px 20px;
-  position: relative;
-}
-
-
-.navbar ul {
-  display: flex;
-  height: 60px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar ul li {
-  list-style-type: none;
-  height: 57px;
-  display: flex;
-  justify-content: center;
-  padding-top: 15px;
-}
-
-.navbar ul li:hover {
-  border-bottom: 4px solid #f43397;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: black;
-  letter-spacing: 1px;
-  font-size: 20px;
-  font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.navbar ul li a:hover {
-  cursor: pointer;
-  color: #f43397;
-}
-
-.navbar ul li a:hover>.nav-item {
-  background-color: yellow;
-}
-
-.hiddenNav {
-  position: absolute;
-  width: 100%;
-  height: 200px;
-  z-index: 5;
-  border-bottom: 1px solid #acbbbc;
-  border-left: 1px solid #acbbbc;
-  border-right: 1px solid #acbbbc;
-  background-color: white;
-  padding: 20px;
-}
-
-.hiddenNav p {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.homeContainer {
-  width: 100%;
-}
-
-.mainDiv {
-  width: 100%;
-  padding: 60px 160px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-}
-
-.mainContentDiv {
-  width: 100%;
-  height: 400px;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #f9f9f9;
-}
-
-.mainImageDiv {
-  width: 100%;
-  height: 100%;
-}
-
-.mainImageDiv img {
-  width: 100%;
-  height: 400px;
-  resize: cover;
-}
-
-.mainContentTitle {
-  font-size: 50px;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.subTitle {
-  width: 400px;
-  height: 65px;
-  border-radius: 8px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mainContentSubTitle {
-  font-size: 25px;
-  font-weight: 600;
-  color: #666666;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.downloadApp {
-  width: 400px;
-  height: 65px;
-  border-radius: 4px;
-  background-color: #f43397;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0px 8px;
-}
-
-.downloadApp img {
-  width: 30px;
-  height: 35px;
-}
-
-.downloadApp p {
-  font-size: 23px;
-  font-weight: 600;
-  color: white;
-}
-
-.category {
-  display: flex;
-  padding: 20px 160px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hrDivider {
-  width: 300px;
-  height: 0.1px;
-  background-color: #f43397;
-}
-
-.categoryTitle {
-  font-size: 45px;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.Fashion {
-  width: 100%;
-  height: 85vh;
-  padding: 0px 160px;
-  margin: 50px 0px;
-}
-
-.Homecare {
-  width: 100%;
-  height: 85vh;
-  padding: 0px 160px;
-  margin: 80px 0px;
 }

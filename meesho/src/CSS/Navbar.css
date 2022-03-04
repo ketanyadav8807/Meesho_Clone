@@ -1,0 +1,258 @@
+.contactBox {
+    width: 100%;
+    display: flex;
+    height: 90px;
+    padding: 8px;
+    align-items: center;
+    border-bottom: 1px solid #acbbbc;
+}
+
+.leftView {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 100%,
+}
+
+.title {
+    width: 20%;
+}
+
+.title img {
+    width: 100%
+}
+
+.inputField {
+    width: 500px;
+    margin-left: 5px;
+    position: relative;
+}
+
+.searchIcon {
+    color: #dbdbdb;
+    position: absolute;
+    top: 15px;
+    left: 8px;
+}
+
+.input {
+    width: 100%;
+    height: 70px;
+    outline: none;
+    border: none;
+    caret-color: #f43397;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 4px;
+    padding-left: 50px;
+    font-size: 20px;
+}
+
+.input::placeholder {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.input:focus {
+    box-shadow: 0 3px 5px 0px rgb(20 20 20 / 10%);
+}
+
+.closeIcon {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+}
+
+.rightView {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+}
+
+.rightViewContent {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    width: 65%;
+    align-items: center;
+}
+
+.app h3 {
+    font-size: 21px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px 10px;
+    color: #666666;
+}
+
+.cdd h3 {
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #666666;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app:hover {
+    cursor: pointer;
+    color: #f43397;
+    border-bottom: 4px solid #f43397;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+    height: 90px;
+}
+
+.vrDivider {
+    width: 0.2px;
+    height: 50px;
+    background-color: #acbbbc;
+    opacity: 0.6;
+}
+
+.supplier {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 20px;
+    width: 35%;
+}
+
+.profile:hover {
+    cursor: pointer;
+    color: #f43397;
+    border-bottom: 4px solid #f43397;
+}
+
+.profile:hover>.profileDetail {
+    opacity: 1;
+}
+
+.profileDetail {
+    opacity: 0;
+    position: absolute;
+    top: 90px;
+    width: 320px;
+    height: 240px;
+    z-index: 5;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 2px 0px 3px rgb(20 20 20 / 5%);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+
+.hrDivider1 {
+    width: 100%;
+    height: 0.7px;
+    background-color: #acbbbc;
+}
+
+.logoutView {
+    display: flex;
+    align-items: center;
+}
+
+.logoutView p {
+    font-size: 23px;
+    color: black;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.userView {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.userView h2 {
+    color: black;
+    font-weight: 600;
+}
+
+.userView p {
+    font-size: 18px;
+    color: black;
+    margin-left: 20px;
+}
+
+.userContent {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.userContent p {
+    margin: 10px 0;
+}
+
+.profile {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    line-height: 20px;
+    position: relative;
+}
+
+.profile h3 {
+    font-size: 20px;
+    color: #666666;
+    font-weight: 400;
+    font-size: 1.1vw;
+}
+
+.cart {
+    line-height: 20px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart p {
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 500;
+}
+
+.cart:hover {
+    cursor: pointer;
+}
+
+.dd {
+    margin: 0px 3px;
+}
+
+.dd h3 {
+    color: #666666;
+    font-size: 20px;
+    font-weight: 400;
+    font-size: 1.1vw;
+}

@@ -46,5 +46,7 @@ function App() {
     //     <Route path='/about' element={<Home />} />
     //   </Routes>
     //   <Footer />
-    //       )
+    //       
 }
+
+export default App
