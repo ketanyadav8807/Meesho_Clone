@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import {
   Box,
   Button,
@@ -13,9 +14,9 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   const [data, setData] = useState({});
   const [img, setImg] = useState([]);
   const [selected, setSelected] = useState("");
-
+  let {id} = useParams();
   useEffect(() => {
-    fetch(`${fetchURL}/2  `)
+    fetch(`${fetchURL}/${id}`)
       .then((res) => res.json())
       .then((d) => {
         setData(d);
@@ -38,11 +39,18 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
     ratingBgColor = "orange";
   }
 
+  let productDetails = data.details;
+  let productDetailsArray=[];
+
+  for(let i in productDetails){
+    productDetailsArray.push([i,productDetails[i]])
+  }
+
   return (
     <>
-      <Grid container columns={12} width={"80%"} marginLeft="10%" my={-5}>
+      <Grid container columns={12} width={"80%"} marginLeft="10%" my={5}>
         <Grid md={2} Item style={{display: "flex",flexDirection: "column", order:{ sm: 2, lg: 1 } }} >
-          {img.map((imgUrl) => (
+          {img && img.map((imgUrl) => (
             <img
               src={imgUrl}
               width="45px"
@@ -271,13 +279,13 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               </Typography>
             </CardContent>
             <CardContent>
-              <Button
+              {data.sizes && data.sizes.map(size => <Button
                 variant="outlined"
                 dissableRipple
                 sx={{
                   backgroundColor: "rgba(244, 51, 151,0.2)",
                   color: "rgb(244, 51, 151)",
-
+                  marginRight:"15px",
                   borderRadius: "40px",
                   marginBottom: "2%",
                   fontSize: "14px",
@@ -290,8 +298,12 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                 disableRipple
                 disableElevation
               >
-                {data.sizes}
-              </Button>
+                {size}
+              </Button>)
+              
+            }
+              
+              
             </CardContent>
           </Card>
 
@@ -307,7 +319,12 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               <Typography variant="h5" fontWeight={700} marginBottom="1%">
                 Product Details
               </Typography>
-              <Typography color="gray" fontSize="18px">
+              {productDetailsArray.map(detail =>
+                <Typography color="gray" fontSize="18px">
+                {detail[0]}: {detail[1]}
+              </Typography>
+              )}
+              {/* <Typography color="gray" fontSize="18px">
                 Name: {data.title}
               </Typography>
               <Typography color="gray" fontSize="18px">
@@ -321,7 +338,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               </Typography>
               <Typography color="gray" fontSize="18px">
                 Description: {data.details && data.details.Description}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </Card>
         </Grid>

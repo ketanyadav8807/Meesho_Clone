@@ -16,11 +16,11 @@ export const Product = ({ fetchURL }) => {
   const [end, setEnd] = useState(5);
 
   const NextButton = () => {
-    return (
-      <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
+    
+      return <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
         NEXT
       </Button>
-    );
+    
   };
 
   const PrevButton = () => {
@@ -40,7 +40,7 @@ export const Product = ({ fetchURL }) => {
         setData(d);
       })
       .catch((err) => console.log(err));
-  }, [begin, end]);
+  }, [begin, end,fetchURL]);
 
   const next = () => {
     setBegin((prev) => prev + 5);
@@ -56,15 +56,20 @@ export const Product = ({ fetchURL }) => {
     <>
       <Grid
         container
+        lg={12}
+        md={12}
         spacing={2}
-        rowSpacing={1}
+        rowSpacing={"20px"}
         columnSpacing={2}
         //   bgcolor={"black"}
         width={"90vw"}
+        marginTop={"52px"}
         sx={{
+          rowGap: "20px",
           justifyContent: "center",
           justifyItems: "center",
-          margin: "auto",
+          marginLeft: "auto",
+          marginRight: "auto",
           // height: "400px",
           padding: "0% 2%",
         }}
@@ -72,7 +77,7 @@ export const Product = ({ fetchURL }) => {
       >
         {data.map((item) => (
           <SingleProduct
-            ref={item}
+            item={item}
             key={item.id}
             images={item.images[0]}
             title={item.title}
@@ -84,12 +89,15 @@ export const Product = ({ fetchURL }) => {
           />
         ))}
       </Grid>
-      <Box sx={{ display: "flex", margin: "auto", justifyContent: "center" }}>
+      <Box
+        sx={{ display: "flex", margin: "4% auto", justifyContent: "center" }}
+      >
         <Pagination
-          count={10}
+          count={data.length / 5 + 1}
           color="primary"
           sx={{ textAlign: "center" }}
           // hidePrevButton
+          
           renderItem={(item) => (
             <PaginationItem
               variant="text"
