@@ -11,7 +11,7 @@ const Footer = () => {
         <div className='footer'>
             <div className='firstSection'>
                 <div className='heading'>
-                    <p className='title'>Shop Non-Stop on Meesho</p>
+                    <p className='headingTitle'>Shop Non-Stop on Meesho</p>
                     <div className='subTitleView'>
                         <p className='subTitle'>Trusted by more than 1 Crore Indians <br /> Cash on Delivery | Free Delivery</p>
                     </div>
