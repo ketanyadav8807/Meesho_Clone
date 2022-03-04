@@ -9,15 +9,7 @@
 .container {
   width: 100%;
   height: 100vh;
-}
-
-.contactBox {
-  padding: 0px 10px;
-  height: 90px;
-  border-bottom: 1px solid #acbbbc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  overflow-x: hidden;
 }
 
 .firstView {
@@ -33,22 +25,12 @@
 }
 
 .inputField {
-  position: relative;
-  margin-left: 10px;
+  width: 80%;
+  /* margin-left: 10px; */
 }
 
-.input {
-  width: 490px;
-  height: 70px;
-  outline: none;
-  border: none;
-  caret-color: #f43397;
-  border: 1px solid rgb(153, 153, 153);
-  border-radius: 4px;
-  padding-left: 50px;
-  margin-left: 10px;
-  font-size: 20px;
-}
+.input {}
+
 
 .input::placeholder {
   font-size: 20px;
@@ -56,60 +38,42 @@
   
 }
 
-.input:focus {
-  box-shadow: 0 3px 5px 0px rgb(20 20 20 / 10%);
-}
 
-.searchIcon {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-}
+.searchIcon {}
 
-.closeIcon {
-  position: absolute;
-  top: 20px;
-  right: 10px;
-}
-
-.closeIcon:hover {
-  cursor: pointer;
-}
 
 .secondView {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   align-items: center;
+  background-color: #666666;
 }
 
 .getApp {
+  width: 200px;
+  background-color: #666666;
   height: 90px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  padding-top: 30px;
 }
 
 .getApp p {
   font-size: 20px;
+
   letter-spacing: 1px;
   
   margin: 0px 10px;
+
 }
 
-.getApp:hover {
-  cursor: pointer;
-  color: #f43397;
-  border-bottom: 4px solid #f43397;
-}
+
 
 .divider {
   width: 2px;
   height: 50px;
-  background-color: #acbbbc;
-  margin: 0px 20px;
-  opacity: 0.6;
 }
 
 .divider2 {
@@ -120,11 +84,6 @@
   opacity: 0.6;
 }
 
-.supplier {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 
 .supplier p {
   font-size: 20px;
@@ -137,42 +96,18 @@
   cursor: pointer;
 }
 
-.user {
-  width: 15%;
-  height: 90px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-}
 
-.profile {
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 15px;
-}
+
 
 .profile p {
   font-size: 20px;
   
 }
 
-.profile:hover {
-  cursor: pointer;
-  color: #f43397;
-  border-bottom: 4px solid #f43397;
-}
 
-.cart {
-  line-height: 15px;
-}
-
-.cart p {
+.profile p {
   font-size: 20px;
+
   
 }
 
@@ -444,4 +379,8 @@
   height: 85vh;
   padding: 0px 160px;
   margin: 80px 0px;
+
+
+  font-family: 500;
+
 }

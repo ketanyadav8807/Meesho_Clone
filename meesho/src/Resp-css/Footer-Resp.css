@@ -1,0 +1,520 @@
+@media (min-width:1335px) and (max-width:1533px) {
+    .footer {
+        padding: 50px 30px 50px 30px;
+    }
+
+    .headingTitle {
+        font-size: 32px;
+    }
+
+    .subTitle {
+        font-size: 20px;
+    }
+
+    .content {
+        font-size: 20px;
+    }
+
+    .subContent {
+        font-size: 20px;
+    }
+
+    .contactTitle {
+        font-size: 22px;
+    }
+
+    .contactIcons img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .download {
+        width: 400px;
+    }
+
+    .download img {
+        width: 190px;
+        height: 50px;
+    }
+
+    .accordion {
+        margin-top: 35px;
+    }
+}
+
+@media (min-width:1250px) and (max-width:1334px) {
+
+    .footer {
+        padding: 50px 30px 40px 30px;
+    }
+
+    .headingTitle {
+        font-size: 28px;
+    }
+
+    .subTitle {
+        font-size: 17px;
+    }
+
+    .career {
+        width: 28%;
+    }
+
+    .content {
+        font-size: 17px;
+    }
+
+    .subContent {
+        font-size: 17px;
+    }
+
+    .contactTitle {
+        font-size: 17px;
+    }
+
+    .contactIcons img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .download {
+        width: 370px;
+    }
+
+    .download img {
+        width: 170px;
+        height: 50px;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1249px) {
+    .footer {
+        padding: 30px 30px 40px 30px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+    }
+
+    .subTitle {
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .footer {
+        padding: 30px 30px 40px 30px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+    }
+
+    .subTitle {
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:576px) and (max-width:767px) {
+
+    .footer {
+        padding: 30px 30px 40px 30px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+        font-size: 28px;
+    }
+
+    .subTitle {
+        margin: 0px auto;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 18px;
+    }
+
+    .subContent {
+        font-size: 18px;
+    }
+
+    .contactTitle {
+        font-size: 20px;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactIcons img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:425px) and (max-width:575px) {
+
+    .footer {
+        padding: 30px 30px 40px 30px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+        font-size: 25px;
+    }
+
+    .subTitle {
+        margin: 0px auto;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 18px;
+    }
+
+    .subContent {
+        font-size: 18px;
+    }
+
+    .contactTitle {
+        font-size: 20px;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactIcons img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+
+    .download {
+        width: 310px;
+    }
+
+    .download img {
+        width: 150px;
+        height: 40px;
+    }
+}
+
+@media (min-width:375px) and (max-width:424px) {
+
+    .footer {
+        padding: 30px 30px 40px 30px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+        font-size: 22px;
+    }
+
+    .subTitleView {
+        padding: 0px auto;
+        width: 100%;
+    }
+
+    .subTitle {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .subContent {
+        font-size: 16px;
+    }
+
+    .contactTitle {
+        font-size: 18px;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactIcons img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+
+    .download {
+        width: 310px;
+    }
+
+    .download img {
+        width: 150px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width:374px) {
+
+    .footer {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .headingTitle {
+        margin: 10px auto;
+        font-size: 22px;
+    }
+
+    .subTitleView {
+        padding: 0px auto;
+        width: 100%;
+    }
+
+    .subTitle {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .subContent {
+        font-size: 16px;
+    }
+
+    .contactTitle {
+        font-size: 18px;
+    }
+
+    .career {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .firstCareerView {
+        margin: 10px 0;
+    }
+
+    .secondCareerView {
+        margin-top: 25px;
+    }
+
+    .contact {
+        padding: 20px 0;
+    }
+
+    .reachOut {
+        padding-top: 20px;
+    }
+
+    .contactIcons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactIcons img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .accordion {
+        margin-top: 25px;
+    }
+
+    .download {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .download img {
+        width: 48%;
+        height: 40px;
+    }
+}

@@ -32,5 +32,7 @@ function App() {
       </ThemeProvider>
     </div>
   );
+
 }
 export default App;
+
