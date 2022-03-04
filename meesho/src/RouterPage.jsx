@@ -5,6 +5,7 @@ import { Route, Routes, Outlet } from "react-router-dom";
 import { Signup } from "./LSPL/Signup";
 import { Otp } from "./LSPL/Otp";
 import Home from "./Pages/Home";
+import { Address } from "./Components/PageProducts/Address";
 export const RouterPage = (props) => {
   return (
     <>
@@ -143,8 +144,9 @@ export const RouterPage = (props) => {
             />
           }
         />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/Otp" element={<Otp />} />
+         <Route path="/signup" element={<Signup />} /> 
+        <Route path="/Otp" element={<Otp />} /> 
+        <Route path="/address" element={<Address />} /> 
       </Routes>
 
       <Outlet />
