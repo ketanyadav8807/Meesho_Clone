@@ -14,7 +14,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   const [data, setData] = useState({});
   const [img, setImg] = useState([]);
   const [selected, setSelected] = useState("");
-  let {id} = useParams();
+  let { id } = useParams();
   useEffect(() => {
     fetch(`${fetchURL}/${id}`)
       .then((res) => res.json())
@@ -40,28 +40,44 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   }
 
   let productDetails = data.details;
-  let productDetailsArray=[];
+  let productDetailsArray = [];
 
-  for(let i in productDetails){
-    productDetailsArray.push([i,productDetails[i]])
+  for (let i in productDetails) {
+    productDetailsArray.push([i, productDetails[i]]);
   }
 
   return (
     <>
       <Grid container columns={12} width={"80%"} marginLeft="10%" my={5}>
-        <Grid md={2} Item style={{display: "flex",flexDirection: "column", order:{ sm: 2, lg: 1 } }} >
-          {img && img.map((imgUrl) => (
-            <img
-              src={imgUrl}
-              width="45px"
-              onClick={(e) => changeSelectedImg(e.currentTarget.src)}
-            />
-          ))}
+        <Grid
+          md={1}
+          Item
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            order: { xs: 2, sm: 2, md: 2, lg: 1 },
+          }}
+        >
+          {img &&
+            img.map((imgUrl) => (
+              <img
+                src={imgUrl}
+                width="45px"
+                onClick={(e) => changeSelectedImg(e.currentTarget.src)}
+              />
+            ))}
         </Grid>
-        <Grid sx={{ display: "flex", flexDirection: "column", width: "400px",order:{ sm: 1, lg: 2 } }} md={4}  >
+        <Grid
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "400px",
+            order: { xs: 1, sm: 1, md: 1, lg: 2 },
+          }}
+          md={4}
+        >
           <Grid
             item
-            
             my={2}
             borderBottom="1px solid rgba(0, 0, 0, 0.2) "
             sx={{
@@ -101,7 +117,11 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
           </Grid>
         </Grid>
 
-        <Grid item md={5} sx={{ marginLeft: "5%", order:{ sm: 3, lg: 3 } }}>
+        <Grid
+          item
+          md={6}
+          sx={{ marginLeft: "5%", order: { xs: 3, sm: 3, md: 3, lg: 3 } }}
+        >
           <Card
             sx={{
               marginBottom: "4%",
@@ -135,10 +155,9 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                 <Typography
                   variant="h4"
                   component="div"
-                  color="gray"
                   align="left"
                   color="black"
-                  component="p"
+                  
                   sx={{ marginRight: "15px", fontFamily: "Mier-Bold" }}
                 >
                   Rs.{data.discounted_price}
@@ -279,31 +298,30 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               </Typography>
             </CardContent>
             <CardContent>
-              {data.sizes && data.sizes.map(size => <Button
-                variant="outlined"
-                dissableRipple
-                sx={{
-                  backgroundColor: "rgba(244, 51, 151,0.2)",
-                  color: "rgb(244, 51, 151)",
-                  marginRight:"15px",
-                  borderRadius: "40px",
-                  marginBottom: "2%",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  ":hover": {
-                    backgroundColor: "rgba(244, 51, 151,0.2)",
-                    color: "rgb(244, 51, 151)",
-                  },
-                }}
-                disableRipple
-                disableElevation
-              >
-                {size}
-              </Button>)
-              
-            }
-              
-              
+              {data.sizes &&
+                data.sizes.map((size) => (
+                  <Button
+                    variant="outlined"
+                    dissableRipple
+                    sx={{
+                      backgroundColor: "rgba(244, 51, 151,0.2)",
+                      color: "rgb(244, 51, 151)",
+                      marginRight: "15px",
+                      borderRadius: "40px",
+                      marginBottom: "2%",
+                      fontSize: "14px",
+                      fontWeight: "500",
+                      ":hover": {
+                        backgroundColor: "rgba(244, 51, 151,0.2)",
+                        color: "rgb(244, 51, 151)",
+                      },
+                    }}
+                    disableRipple
+                    disableElevation
+                  >
+                    {size}
+                  </Button>
+                ))}
             </CardContent>
           </Card>
 
@@ -319,26 +337,237 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               <Typography variant="h5" fontWeight={700} marginBottom="1%">
                 Product Details
               </Typography>
-              {productDetailsArray.map(detail =>
+              {productDetailsArray.map((detail) => (
                 <Typography color="gray" fontSize="18px">
-                {detail[0]}: {detail[1]}
+                  {detail[0]}: {detail[1]}
+                </Typography>
+              ))}
+            </CardContent>
+          </Card>
+          <Card
+            sx={{
+              marginBottom: "4%",
+              border: "1px solid rgb(240, 240, 240)",
+              borderRadius: "8px",
+              boxShadow: "none",
+            }}
+          >
+            <CardContent>
+              <Typography variant="h5" fontWeight={700} marginBottom="1%">
+                Product Ratings & Reviews
               </Typography>
-              )}
-              {/* <Typography color="gray" fontSize="18px">
-                Name: {data.title}
-              </Typography>
-              <Typography color="gray" fontSize="18px">
-                Fabric: {data.details && data.details.Fabric}
-              </Typography>
-              <Typography color="gray" fontSize="18px">
-                Multipack: {data.details && data.details.Multipack}
-              </Typography>
-              <Typography color="gray" fontSize="18px">
-                Pattern: {data.details && data.details.Pattern}
-              </Typography>
-              <Typography color="gray" fontSize="18px">
-                Description: {data.details && data.details.Description}
-              </Typography> */}
+
+              <Box
+                display={"flex"}
+                sx={{
+                  justifyItems: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  display={"flex"}
+                  sx={{
+                    flexDirection: "column",
+                    justifyItems: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    align="left"
+                    variant="h3"
+                    sx={{
+                      padding: "5px 10px",
+                      width: "fit-content",
+                      display: "flex",
+                      alignItems: "center",
+                      borderRadius: "40px",
+
+                      marginTop: "5px",
+                      marginRight: "8px",
+
+                      color: ratingBgColor,
+                    }}
+                  >
+                    {data.rating}
+                    <span style={{ marginTop: "-8px", fontSize: "28px" }}>
+                      &#9733;
+                    </span>
+                  </Typography>
+                  <Typography
+                    align="left"
+                    component="p"
+                    fontSize={"12px"}
+                    color={"gray"}
+                  >
+                    31 Ratings,
+                  </Typography>
+                  <Typography
+                    align="left"
+                    component="p"
+                    fontSize={"12px"}
+                    color={"gray"}
+                  >
+                    6 Reviews
+                  </Typography>
+                </Box>
+                <Box sx={{ width: "100%", fontSize: "12px" }}>
+                  <Box
+                    display="flex"
+                    sx={{
+                      justifyItems: "center",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      width: "90%",
+                      margin: "2% 0%",
+                    }}
+                  >
+                    <span>Excellent</span>
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        width: "70%",
+                        borderRadius: "8px",
+                        marginLeft: "5%",
+                        height: "4px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "70%",
+                          height: "4px",
+                          backgroundColor: "green",
+                          borderRadius: "8px",
+                        }}
+                      ></div>
+                    </div>
+                    <div style={{ paddingLeft: "3%", color: "gray" }}>12</div>
+                  </Box>
+                  <Box
+                    display="flex"
+                    sx={{
+                      justifyItems: "center",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                      width: "90%",
+                      margin: "2% 0%",
+                    }}
+                  >
+                    <span>Very Good</span>
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        width: "70%",
+                        borderRadius: "8px",
+                        marginLeft: "5%",
+                        height: "4px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "70%",
+                          height: "4px",
+                          backgroundColor: "rgb(6, 167, 89)",
+                          borderRadius: "8px",
+                        }}
+                      ></div>
+                    </div>
+                    <div style={{ paddingLeft: "3%", color: "gray" }}>12</div>
+                  </Box>
+                  <Box
+                    display="flex"
+                    sx={{
+                      justifyItems: "center",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                      width: "90%",
+                      margin: "2% 0%",
+                    }}
+                  >
+                    <span>Good</span>
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        width: "70%",
+                        borderRadius: "8px",
+                        marginLeft: "5%",
+                        height: "4px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "70%",
+                          height: "4px",
+                          backgroundColor: "orange",
+                          borderRadius: "8px",
+                        }}
+                      ></div>
+                    </div>
+                    <div style={{ paddingLeft: "3%", color: "gray" }}>12</div>
+                  </Box>
+                  <Box
+                    display="flex"
+                    sx={{
+                      justifyItems: "center",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      width: "90%",
+                      margin: "2% 0%",
+                    }}
+                  >
+                    <span>Average</span>
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        width: "70%",
+                        borderRadius: "8px",
+                        marginLeft: "5%",
+                        height: "4px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "70%",
+                          height: "4px",
+                          backgroundColor: "rgb(236, 128, 61)",
+                          borderRadius: "8px",
+                        }}
+                      ></div>
+                    </div>
+                    <div style={{ paddingLeft: "3%", color: "gray" }}>8</div>
+                  </Box>
+                  <Box
+                    display="flex"
+                    sx={{
+                      justifyItems: "center",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      width: "90%",
+                      margin: "2% 0%",
+                    }}
+                  >
+                    <span>Poor</span>
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        width: "70%",
+                        borderRadius: "8px",
+                        marginLeft: "5%",
+                        height: "4px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "10%",
+                          height: "4px",
+                          backgroundColor: "red",
+                          borderRadius: "8px",
+                        }}
+                      ></div>
+                    </div>
+                    <div style={{ paddingLeft: "3%", color: "gray" }}>3</div>
+                  </Box>
+                </Box>
+              </Box>
             </CardContent>
           </Card>
         </Grid>

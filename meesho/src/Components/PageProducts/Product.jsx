@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Button, Grid, Pagination, PaginationItem } from "@mui/material";
 import { SingleProduct } from "./SingleProduct";
+import { useLocation } from "react-router-dom";
 import { Box } from "@mui/system";
 
 /**
@@ -14,13 +15,15 @@ export const Product = ({ fetchURL }) => {
   const [data, setData] = useState([]);
   const [begin, setBegin] = useState(0);
   const [end, setEnd] = useState(5);
-
+  const [total, setTotal] = useState(0);
+  const location = useLocation().pathname.slice(1);
+  const title = location.replace("_", " ");
   const NextButton = () => {
-    
-      return <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
+    return (
+      <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
         NEXT
       </Button>
-    
+    );
   };
 
   const PrevButton = () => {
@@ -32,7 +35,12 @@ export const Product = ({ fetchURL }) => {
       <></>
     );
   };
-
+  useEffect(() => {
+    fetch(`${fetchURL}`)
+      .then((res) => res.json())
+      .then((data) => setTotal(data.length))
+      .catch(console.log);
+  }, []);
   useEffect(() => {
     fetch(`${fetchURL}?_start=${begin}&_end=${end}`)
       .then((res) => res.json())
@@ -40,7 +48,7 @@ export const Product = ({ fetchURL }) => {
         setData(d);
       })
       .catch((err) => console.log(err));
-  }, [begin, end,fetchURL]);
+  }, [begin, end, fetchURL]);
 
   const next = () => {
     setBegin((prev) => prev + 5);
@@ -54,6 +62,13 @@ export const Product = ({ fetchURL }) => {
   };
   return (
     <>
+      <div style={{margin:"1% 1%"}}>
+        <h2>{title}</h2>
+
+        <h4 style={{marginTop:"1% "}}>
+          showing {begin}-{end} of {total} Products
+        </h4>
+      </div>
       <Grid
         container
         lg={12}
@@ -97,7 +112,7 @@ export const Product = ({ fetchURL }) => {
           color="primary"
           sx={{ textAlign: "center" }}
           // hidePrevButton
-          
+
           renderItem={(item) => (
             <PaginationItem
               variant="text"
