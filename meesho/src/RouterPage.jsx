@@ -2,6 +2,8 @@ import React from "react";
 import { Product } from "./Components/PageProducts/Product";
 import { ProductDetail } from "./Components/productDetails/ProductDetail";
 import { Route, Routes, Outlet } from "react-router-dom";
+import { Signup } from "./LSPL/Signup";
+import { Otp } from "./LSPL/Otp";
 import Home from "./Pages/Home";
 export const RouterPage = (props) => {
   return (
@@ -141,6 +143,8 @@ export const RouterPage = (props) => {
             />
           }
         />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/Otp" element={<Otp />} />
       </Routes>
 
       <Outlet />
