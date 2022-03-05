@@ -71,7 +71,7 @@ const Home = () => {
                 <p>Products For You</p>
             </div>
             <div className='productsList'>
-                <Product fetchURL={"https://meesho-db.herokuapp.com/Men"} />
+                {/* <Product fetchURL={"https://meesho-db.herokuapp.com/Men"} /> */}
             </div>
         </div>
     )

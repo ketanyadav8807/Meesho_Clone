@@ -267,3 +267,7 @@
     justify-content: space-evenly;
     padding-left: 20px;
 }
+
+.respContactBox {
+    display: none;
+}
