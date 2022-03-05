@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export const CheckoutContext = createContext();
 
 export const CheckoutContextProvider = ({ children }) => {
-  const steps = ["Cart", "Address", "Payment", "Summary"];
+  const steps = ["Cart", "Address", "Thank you"];
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState({});
   const navigate = useNavigate();
@@ -26,13 +26,13 @@ export const CheckoutContextProvider = ({ children }) => {
 
   const handleNext = () => {
     const newActiveStep =
-      isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
+      !isLastStep ? activeStep
+         // It's the last step, but not all steps have been completed,
           // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
+          
         : activeStep + 1;
     setActiveStep(newActiveStep);
-    navigate(`checkout/${steps[newActiveStep]}`)
+    navigate(`checkout/${steps[newActiveStep].split(" ").join("")}`)
   };
 
   const handleBack = () => {
