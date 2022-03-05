@@ -1,7 +1,9 @@
-import React from "react";
-
-import { Box, TextField, Typography,Button } from "@mui/material";
+import React, { useContext } from "react";
+import { CheckoutContext } from "../../Context/CheckoutContext";
+import { Box, TextField, Typography, Button } from "@mui/material";
 export const Address = () => {
+  const { handleNext } =
+    useContext(CheckoutContext);
   return (
     <div
       style={{
@@ -11,10 +13,10 @@ export const Address = () => {
         lineHeight: "24px",
         width: "600px",
         marginLeft: "10%",
-        letterSpacing:"0.5px"
+        letterSpacing: "0.5px",
       }}
     >
-     <p style={{letterSpacing:"1px"}}> Select Delivery Address</p>
+      <p style={{ letterSpacing: "1px" }}> Select Delivery Address</p>
       <Box
         display={"flex"}
         sx={{
@@ -88,7 +90,6 @@ export const Address = () => {
               width="20"
               height="20"
               style={{ margin: "0% 2% -1% 0%" }}
-              
             >
               <path
                 d="M13.14 11.925c-.17.188-.357.371-.552.543l-4.603 4.056-4.604-4.055a6.763 6.763 0 01-.551-9.628A6.961 6.961 0 017.987.564a6.95 6.95 0 014.601 1.733 6.739 6.739 0 012.298 4.701 6.719 6.719 0 01-1.746 4.926z"
@@ -134,9 +135,19 @@ export const Address = () => {
             />
           </div>
           <div style={{ margin: "1% 3%" }}>
-            <TextField id="city" sx={{width:"46%"}} label="City" variant="standard" />
-            <span style={{ margin: "1% 3%", width:"50%" }}></span>
-            <TextField id="state" sx={{width:"48%"}} label="State" variant="standard" />
+            <TextField
+              id="city"
+              sx={{ width: "46%" }}
+              label="City"
+              variant="standard"
+            />
+            <span style={{ margin: "1% 3%", width: "50%" }}></span>
+            <TextField
+              id="state"
+              sx={{ width: "48%" }}
+              label="State"
+              variant="standard"
+            />
           </div>
           <div style={{ margin: "1% 3%" }}>
             <TextField
@@ -146,7 +157,21 @@ export const Address = () => {
               variant="standard"
             />
           </div>
-          <Button disableRipple variant="contained" size="large" fullWidth sx={{margin:"15% 0% 3% 0%", fontSize:"18px", fontWeight:"500", textTransform:"capitalize"}}>Save Address & Continue</Button>
+          <Button
+            disableRipple
+            variant="contained"
+            size="large"
+            fullWidth
+            sx={{
+              margin: "15% 0% 3% 0%",
+              fontSize: "18px",
+              fontWeight: "500",
+              textTransform: "capitalize",
+            }}
+            onClick={handleNext}
+          >
+            Save Address & Continue
+          </Button>
         </Box>
       </Box>
     </div>
