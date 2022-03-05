@@ -8,7 +8,7 @@ export const Sub_Navbar = () => {
     const [data, setData] = useState(0)
 
     return (
-        <>
+        <div className='navbarDiv'>
             <nav className="navbar" onMouseLeave={() => setData(0)}>
                 <ul>
                     <li className="nav-item" onMouseEnter={() => setData(1)} >
@@ -113,6 +113,6 @@ export const Sub_Navbar = () => {
                                                     </div>
                 }
             </div>
-        </>
+        </div>
     );
 };

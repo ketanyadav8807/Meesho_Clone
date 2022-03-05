@@ -1,0 +1,280 @@
+@media (min-width:1480px) and (max-width:1580px) {
+    .homeContainer {
+        padding: 0px 150px;
+    }
+
+    .categoryTitle {
+        font-size: 40px;
+    }
+}
+
+@media (min-width:1356px) and (max-width:1480px) {
+    .homeContainer {
+        padding: 0px 150px;
+    }
+
+    .categoryTitle {
+        font-size: 35px;
+    }
+
+    .mainContentDiv {
+        height: 400px;
+        padding: 50px;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+    }
+
+    .mainContentTitle {
+        font-size: 43px;
+    }
+
+}
+
+@media (min-width:1297px) and (max-width:1355px) {
+    .homeContainer {
+        padding: 0px 100px;
+    }
+
+    .categoryTitle {
+        font-size: 35px;
+    }
+
+    .mainContentDiv {
+        height: 400px;
+        padding: 50px;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+    }
+
+    .mainContentTitle {
+        font-size: 40px;
+    }
+}
+
+@media (min-width:1169px) and (max-width:1296px) {
+    .homeContainer {
+        padding: 0px 80px;
+    }
+
+    .categoryTitle {
+        font-size: 35px;
+    }
+
+    .mainContentDiv {
+        height: 400px;
+        padding: 50px;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+    }
+
+    .mainContentTitle {
+        font-size: 37px;
+    }
+
+    .mainContentSubTitle {
+        font-size: 22px;
+    }
+
+    .downloadApp {
+        width: 380px;
+        height: 55px;
+    }
+
+    .downloadApp img {
+        width: 25px;
+        height: 30px;
+    }
+
+    .downloadApp p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1168px) {
+    .homeContainer {
+        padding: 0px 70px;
+    }
+
+    .categoryTitle {
+        font-size: 33px;
+    }
+
+    .mainContentDiv {
+        height: 380px;
+        padding: 50px;
+    }
+
+    .mainImageDiv img {
+        height: 380px;
+    }
+
+    .mainContentTitle {
+        font-size: 35px;
+    }
+
+    .mainContentSubTitle {
+        font-size: 20px;
+    }
+
+    .downloadApp {
+        width: 350px;
+        height: 50px;
+    }
+
+    .downloadApp img {
+        width: 22px;
+        height: 27px;
+    }
+
+    .downloadApp p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .category {
+        display: none;
+    }
+
+    .homeContainer {
+        padding: 0px 100px;
+    }
+
+    .mainDiv {
+        padding: 60px 0px;
+        grid-template-columns: 1fr;
+    }
+
+    .mainContentDiv {
+        height: 380px;
+        padding: 50px;
+        align-items: center;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+    }
+
+    .mainContentTitle {
+        font-size: 35px;
+    }
+
+    .mainContentSubTitle {
+        font-size: 20px;
+    }
+
+    .downloadApp {
+        width: 350px;
+        height: 50px;
+    }
+
+    .downloadApp img {
+        width: 22px;
+        height: 27px;
+    }
+
+    .downloadApp p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width:425px) and (max-width:767px) {
+    .category {
+        display: none;
+    }
+
+    .homeContainer {
+        padding: 0px 0px;
+    }
+
+    .mainDiv {
+        grid-template-columns: 1fr;
+        background-color: yellow;
+    }
+
+    .mainContentDiv {
+        width: 100%;
+        height: 380px;
+        padding: 50px;
+        align-items: center;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+        resize: contain;
+    }
+
+    .mainContentTitle {
+        font-size: 35px;
+    }
+
+    .mainContentSubTitle {
+        font-size: 20px;
+    }
+
+    .downloadApp {
+        width: 350px;
+        height: 50px;
+    }
+
+    .downloadApp img {
+        width: 22px;
+        height: 27px;
+    }
+
+    .downloadApp p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width:425px) and (max-width:576px) {
+    .category {
+        display: none;
+    }
+
+    .homeContainer {
+        padding: 0px 0px;
+    }
+
+    .mainDiv {
+        grid-template-columns: 1fr;
+    }
+
+    .mainContentDiv {
+        height: 380px;
+        padding: 50px;
+        align-items: center;
+    }
+
+    .mainImageDiv img {
+        height: 400px;
+    }
+
+    .mainContentTitle {
+        font-size: 35px;
+    }
+
+    .mainContentSubTitle {
+        font-size: 20px;
+    }
+
+    .downloadApp {
+        width: 350px;
+        height: 50px;
+    }
+
+    .downloadApp img {
+        width: 22px;
+        height: 27px;
+    }
+
+    .downloadApp p {
+        font-size: 18px;
+    }
+}

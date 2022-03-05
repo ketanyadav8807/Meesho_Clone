@@ -24,7 +24,7 @@ function App() {
     <div className="container">
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Sub_Navbar />
+        {/* <Sub_Navbar /> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
         </Routes>

@@ -9,12 +9,19 @@ import {
     CloseOutlined,
     ExitToApp,
     LocalMallOutlined,
-    AccountCircle
+    AccountCircle,
+    Menu
 } from '@material-ui/icons';
+import { Drawer } from '@material-ui/core';
+import Accordion from '@material-ui/core/Accordion'
+import AccordionSummary from '@material-ui/core/AccordionSummary'
+import AccordionDetails from '@material-ui/core/AccordionDetails'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 export const Navbar = () => {
 
     const [search, setSearch] = useState("")
+    const [state, setState] = useState(false)
     const [hover, setHover] = useState(0)
     const [width, setWidth] = useState(0);
 
@@ -38,6 +45,8 @@ export const Navbar = () => {
     const handleCancel = () => {
         setSearch("")
     }
+
+    console.log(width)
     return (
         <div className='contactBox'>
             <div className='leftView'>
@@ -94,6 +103,51 @@ export const Navbar = () => {
                        <h3>Cart</h3>
                     </div>
                 </div>
+            </div>
+            <div className='respContactBox'>
+            <Menu style={{ fontSize: 30, color: 'black' }} onClick={() => setState(true)} />
+            <div className='dd' >
+                <ShoppingCartOutlined style={{ fontSize: width < "1145" ?  30 : 35,  color:'#666666' }} />
+            </div>
+            <Drawer anchor='left' open={state}
+                onClose={() => setState(false)} onOpen={() => setState(true)}>
+                    <div className="drawer">
+                    <div><p>meesho</p></div>
+                    <div className='userView'>
+                            <AccountCircle style={{ fontSize: 60, color: '#f7f9ff' }} />
+                            <div className='userContent'>
+                                <h2>Hello User</h2>
+                                <p>+8605817892</p>
+                            </div>
+                        </div>
+                        <div className='hrDivider1'></div>
+                        <div className='logoutView'>
+                            <LocalMallOutlined style={{ fontSize: 30, color: 'black' }} />
+                            <p>My Orders</p>
+                        </div>
+                        <div><p>categories</p></div>
+                        <Accordion>
+                    <AccordionSummary
+                        className='accordionSum'
+                        expandIcon={<ExpandMoreIcon style={{ fontSize: 45, color: '#666666' }} />}
+                    >
+                        More Details
+                    </AccordionSummary>
+                    <AccordionDetails className='accordionDet'>
+                        <p>Thank you for clicking</p>
+                        <p>Thank you for clicking</p>
+                        <p>Thank you for clicking</p>
+                        <p>Thank you for clicking</p>
+                    </AccordionDetails>
+                </Accordion>
+                        <div>p</div>
+                        <div>p</div>
+                        <div>p</div>
+                        <div>p</div>
+                        <div>p</div>
+                        <div>p</div>
+                    </div>
+            </Drawer>
             </div>
         </div>
     );

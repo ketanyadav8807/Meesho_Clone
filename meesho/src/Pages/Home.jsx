@@ -1,7 +1,9 @@
 import React from 'react'
 import FashionStorePoster from '../Components/FashionStorePoster'
 import HomeCarePoster from '../Components/HomeCarePoster'
+import { Product } from '../Components/PageProducts/Product'
 import '../CSS/Home.css'
+import '../Resp-css/Home-Resp.css'
 
 const Home = () => {
     return (
@@ -26,12 +28,8 @@ const Home = () => {
                 <p className='categoryTitle'>Top Categories to choose from</p>
                 <div className='hrDivider'></div>
             </div>
-            <div className='Fashion'>
-                <FashionStorePoster />
-            </div>
-            <div className='Homecare'>
-                <HomeCarePoster />
-            </div>
+            <FashionStorePoster />
+            <HomeCarePoster />
             <div className='Reseller'>
                 <div className='ResellerView'>
                     <div className='ResellerContentView'>
@@ -73,7 +71,7 @@ const Home = () => {
                 <p>Products For You</p>
             </div>
             <div className='productsList'>
-
+                <Product fetchURL={"https://meesho-db.herokuapp.com/Men"} />
             </div>
         </div>
     )

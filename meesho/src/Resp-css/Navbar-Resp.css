@@ -109,4 +109,21 @@
 
 }
 
-@media (min-width:992px) and (max-width:1199px) {}
+@media only screen and (max-width:1023px) {
+    .leftView {
+        display: none;
+    }
+
+    .rightView {
+        display: none;
+    }
+
+    .respContactBox {
+        width: 100%;
+        height: 60;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+    }
+}
