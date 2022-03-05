@@ -82,7 +82,6 @@
             "images": [
                 "https://images.meesho.com/images/products/72023366/vjm3z_512.jpg",
                 "https://images.meesho.com/images/products/71044944/tvwam_64.jpg"
-
             ],
             "details": {
                 "Fabric": "Chiffon",
@@ -103,7 +102,7 @@
                 "Free Size"
             ],
             "images": [
-.meesho.com/images/products/71034092/aghvl_64.jpg"
+                "meesho.com/images/products/71034092/aghvl_64.jpg"
             ],
             "details": {
                 "Fabric": "Chiffon",

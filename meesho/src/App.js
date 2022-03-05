@@ -2,8 +2,11 @@ import { Product } from "./Components/PageProducts/Product";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { ProductDetail } from "./Components/productDetails/ProductDetail";
 import { Route, Routes } from "react-router-dom";
+
 import { Checkout } from "./Components/checkout/Checkout";
 import "./App.css";
+
+
 import Footer from "./Components/Footer";
 import { Navbar } from "./Components/Navbar";
 import { Sub_Navbar } from "./Components/Sub_Navbar";
@@ -32,6 +35,7 @@ function App() {
 
   return (
     <div className="container">
+
       <CheckoutContextProvider>
         <ThemeProvider theme={theme}>
           <Navbar />
@@ -46,6 +50,7 @@ function App() {
           <Footer />
         </ThemeProvider>
       </CheckoutContextProvider>
+
     </div>
   );
 }
