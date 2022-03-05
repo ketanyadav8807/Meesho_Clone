@@ -48,6 +48,7 @@ export const NotFound = () => {
         }}
         disableRipple
         disableElevation
+        onClick={() => window.location.reload()}
       >
         <svg
           width="20"
