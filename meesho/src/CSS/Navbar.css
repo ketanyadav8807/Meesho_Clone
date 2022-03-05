@@ -5,6 +5,8 @@
     padding: 8px;
     align-items: center;
     border-bottom: 1px solid #acbbbc;
+    top: 0px;
+    background-color: white;
 }
 
 .leftView {
@@ -255,4 +257,17 @@
     font-size: 20px;
     font-weight: 400;
     font-size: 1.1vw;
+}
+
+.drawer {
+    background-color: white;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 20px;
+}
+
+.respContactBox {
+    display: none;
 }

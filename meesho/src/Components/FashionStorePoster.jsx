@@ -1,5 +1,6 @@
 import React from 'react'
 import '../CSS/FashionStore.css'
+import '../Resp-css/FashionStore-Resp.css'
 
 const FashionStorePoster = () => {
     return (

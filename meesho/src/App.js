@@ -2,7 +2,7 @@ import { Product } from "./Components/PageProducts/Product";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { ProductDetail } from "./Components/productDetails/ProductDetail";
 import { Route, Routes } from "react-router-dom";
-// import './App.css';
+import './App.css';
 import Footer from "./Components/Footer";
 import { Navbar } from "./Components/Navbar";
 import { Sub_Navbar } from "./Components/Sub_Navbar";
@@ -21,10 +21,10 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="container">
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Sub_Navbar />
+        {/* <Sub_Navbar /> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
         </Routes>
