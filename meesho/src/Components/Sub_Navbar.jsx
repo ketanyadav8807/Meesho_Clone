@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import '../CSS/Sub_Navbar.css'
 import '../Resp-css/Sub-Navbar-Resp.css'
+import {RouterPage} from "../RouterPage"
 
 export const Sub_Navbar = () => {
 
@@ -113,6 +114,9 @@ export const Sub_Navbar = () => {
                                                     </div>
                 }
             </div>
-        </div>
+
+            <RouterPage />
+        </>
+
     );
 };

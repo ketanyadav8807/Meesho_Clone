@@ -146,7 +146,6 @@ export const RouterPage = (props) => {
         />
          <Route path="/signup" element={<Signup />} /> 
         <Route path="/Otp" element={<Otp />} /> 
-        <Route path="/address" element={<Address />} /> 
       </Routes>
 
       <Outlet />
