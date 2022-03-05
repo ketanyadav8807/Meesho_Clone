@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
-import '../App.css'
+import '../CSS/Sub_Navbar.css'
+import '../Resp-css/Sub-Navbar-Resp.css'
+import {RouterPage} from "../RouterPage"
 
 export const Sub_Navbar = () => {
 
     const [data, setData] = useState(0)
 
     return (
-        <>
-            <nav className="navbar">
+        <div className='navbarDiv'>
+            <nav className="navbar" onMouseLeave={() => setData(0)}>
                 <ul>
-                    <li className="nav-item" onMouseEnter={() => setData(1)}>
+                    <li className="nav-item" onMouseEnter={() => setData(1)} >
                         <Link to="/home">Women Ethic</Link>
                     </li>
-                    <li className="nav-item" onMouseEnter={() => setData(2)}>
+                    <li className="nav-item" onMouseEnter={() => setData(2)} >
                         <Link to="/about">Women Western</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(3)}>
@@ -112,6 +114,9 @@ export const Sub_Navbar = () => {
                                                     </div>
                 }
             </div>
+
+            <RouterPage />
         </>
+
     );
 };
