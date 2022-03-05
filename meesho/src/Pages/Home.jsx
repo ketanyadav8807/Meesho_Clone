@@ -30,18 +30,18 @@ const Home = () => {
             </div>
             <FashionStorePoster />
             <HomeCarePoster />
-            <div className='Reseller'>
-                <div className='ResellerView'>
-                    <div className='ResellerContentView'>
-                        <p className='ResellerTitle'>Become a Reseller and</p>
-                        <p className='ResellerSubTitle'>Start your Online Business with Zero Investment</p>
-                        <div className='download'>
-                            <img src="https://meesho.com/_next/static/images/google-play-button-1f2aa747a3eefa161840b04e057b31ac.png" alt="" />
-                            <img src="https://meesho.com/_next/static/images/appstore-button-4b171cf04fe0557718dfd2cbf309c61d.png" alt="" />
-                        </div>
+            {/* <div className='Reseller'> */}
+            <div className='ResellerView'>
+                {/* <div className='ResellerContentView'>
+                    <p className='ResellerTitle'>Become a Reseller and</p>
+                    <p className='ResellerSubTitle'>Start your Online Business with Zero Investment</p>
+                    <div className='download'>
+                        <img src="https://meesho.com/_next/static/images/google-play-button-1f2aa747a3eefa161840b04e057b31ac.png" alt="" />
+                        <img src="https://meesho.com/_next/static/images/appstore-button-4b171cf04fe0557718dfd2cbf309c61d.png" alt="" />
                     </div>
-                </div>
+                </div> */}
             </div>
+            {/* </div> */}
             <div className="Supplier">
                 <div className="SupplierView">
                     <p className='SupplierTitle'>Register as a Meesho Supplier</p>
@@ -71,7 +71,7 @@ const Home = () => {
                 <p>Products For You</p>
             </div>
             <div className='productsList'>
-                {/* <Product fetchURL={"https://meesho-db.herokuapp.com/Men"} /> */}
+                <Product fetchURL={"https://meesho-db.herokuapp.com/Men"} />
             </div>
         </div>
     )

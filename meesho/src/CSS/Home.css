@@ -6,13 +6,14 @@
 .mainDiv {
     width: 100%;
     display: grid;
-    margin: 50px 0;
+    margin-top: 80px;
+    margin-bottom: 50px;
     grid-template-columns: 1.05fr 0.95fr;
 }
 
 .mainContentDiv {
     width: 100%;
-    height: 400px;
+    height: 420px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@
 
 .mainImageDiv img {
     width: 100%;
-    height: 400px;
+    height: 420px;
     resize: cover;
 }
 
@@ -111,15 +112,16 @@
     margin: 50px 0px;
 }
 
-.Reseller {
+/* .Reseller {
     width: 100%;
     height: 85vh;
     margin: 50px 0px;
-}
+    background-color: yellow;
+} */
 
 .ResellerView {
     width: 100%;
-    height: 100%;
+    height: 85vh;
     background-image: url("https://meesho.com/_next/static/images/download_banner-19ca4d63d9c1dc44bc8cbfae62b60bd7.jpg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -129,6 +131,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     padding: 70px 50px;
+    margin: 50px 0px;
 }
 
 .ResellerContentView {
@@ -227,6 +230,5 @@
 
 .productsList {
     width: 100%;
-    padding: 0 160px;
     margin: 50px 0;
 }

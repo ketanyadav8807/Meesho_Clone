@@ -46,7 +46,7 @@ export const SingleProduct = ({
         lg={3}
         md={6}
         xs={12}
-        height="320px"
+        height="450px"
         onClick={() =>
           navigate(`${item.id}`,)
         }
@@ -56,7 +56,7 @@ export const SingleProduct = ({
           <CardMedia
             component="img"
             alt="productImg"
-            height="220px"
+            height="300px"
             box-sizing="border-box"
             image={images}
           />

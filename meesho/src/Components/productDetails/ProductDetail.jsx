@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Box,
   Button,
@@ -9,11 +9,15 @@ import {
   Typography,
 } from "@mui/material";
 import { CartIcon } from "../../Icon/CartIcon";
+import {Loading} from "../../Components/Loading"
+import { CartContext } from "../../Contexts/CartProvider";
 
 export const ProductDetail = ({ refItem, fetchURL }) => {
+  const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState({});
   const [img, setImg] = useState([]);
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState(null);
   let { id } = useParams();
   useEffect(() => {
     fetch(`${fetchURL}/${id}`)
@@ -46,6 +50,37 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
     productDetailsArray.push([i, productDetails[i]]);
   }
 
+  const {getCount} = useContext(CartContext)
+
+  const handleCart = () => {
+    setIsLoading(true)
+    try {
+      fetch(`https://meesho-db.herokuapp.com/cart`, {
+          method: "POST",
+          headers: {
+              "content-type": "application/json",
+          },
+          body:JSON.stringify({
+            ...data,
+            quantity:1
+          })
+      }).then((r) => {
+          console.log(r)
+          r.json();
+      }
+      ).then((d) => {
+          console.log(d)
+          setIsLoading(false)
+          getCount();
+          navigate("/cart")
+      })
+  } catch (error) {
+      console.log(error)
+      setIsLoading(false)
+  }
+  }
+
+  if(isLoading) return <Loading/>
   return (
     <>
       <Grid container columns={12} width={"80%"} marginLeft="10%" my={5}>
@@ -110,6 +145,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               }}
               disableRipple
               disableElevation
+              onClick={() => handleCart()}
             >
               <CartIcon />
               Add to Cart
@@ -318,6 +354,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                     }}
                     disableRipple
                     disableElevation
+                    onClick={() => setSelected(size.id)}
                   >
                     {size}
                   </Button>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
-import '../CSS/Sub_Navbar.css'
-import '../Resp-css/Sub-Navbar-Resp.css'
+import '../CSS/Sub_Navbar.css';
+import '../Resp-css/Sub-Navbar-Resp.css';
+import {RouterPage} from '../RouterPage'; 
 
 export const Sub_Navbar = () => {
 
@@ -12,31 +13,31 @@ export const Sub_Navbar = () => {
             <nav className="navbar" onMouseLeave={() => setData(0)}>
                 <ul>
                     <li className="nav-item" onMouseEnter={() => setData(1)} >
-                        <Link to="/home">Women Ethic</Link>
+                        <Link to="/Women_Ethnic">Women Ethic</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(2)} >
-                        <Link to="/about">Women Western</Link>
+                        <Link to="/Women_Western">Women Western</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(3)}>
-                        <Link to="#">{"Jewellery & Accessories"}</Link>
+                        <Link to="/Jewellery">{"Jewellery & Accessories"}</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(4)}>
-                        <Link to="#">Men</Link>
+                        <Link to="/Men">Men</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(5)}>
-                        <Link to="#">{"Beauty & Health"}</Link>
+                        <Link to="/Beauty_Products">{"Beauty & Health"}</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(6)}>
-                        <Link to="#">{"Bags & Footwear"}</Link>
+                        <Link to="/Bags_Footwear">{"Bags & Footwear"}</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(7)}>
-                        <Link to="#">{"Home & Kitchen"}</Link>
+                        <Link to="/Home_Kitchen">{"Home & Kitchen"}</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(8)}>
-                        <Link to="#">Kids</Link>
+                        <Link to="/Kids">Kids</Link>
                     </li>
                     <li className="nav-item" onMouseEnter={() => setData(9)}>
-                        <Link to="#">Electronics</Link>
+                        <Link to="/Electronics">Electronics</Link>
                     </li>
                 </ul>
                 {/* <div className='respIcon' onClick={() => setVisible(!visible)}>
@@ -113,6 +114,7 @@ export const Sub_Navbar = () => {
                                                     </div>
                 }
             </div>
+            <RouterPage/>
         </div>
     );
 };

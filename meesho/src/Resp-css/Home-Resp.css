@@ -3,6 +3,10 @@
         padding: 0px 150px;
     }
 
+    .mainDiv{
+        padding: 0;
+    }
+
     .categoryTitle {
         font-size: 40px;
     }
@@ -11,6 +15,10 @@
 @media (min-width:1356px) and (max-width:1480px) {
     .homeContainer {
         padding: 0px 150px;
+    }
+
+    .mainDiv{
+        padding: 0;
     }
 
     .categoryTitle {
@@ -37,6 +45,10 @@
         padding: 0px 100px;
     }
 
+    .mainDiv{
+        padding: 0;
+    }
+
     .categoryTitle {
         font-size: 35px;
     }
@@ -58,6 +70,10 @@
 @media (min-width:1169px) and (max-width:1296px) {
     .homeContainer {
         padding: 0px 80px;
+    }
+
+    .mainDiv{
+        padding: 0;
     }
 
     .categoryTitle {
@@ -103,6 +119,10 @@
 
     .categoryTitle {
         font-size: 33px;
+    }
+
+    .mainDiv{
+        padding: 0;
     }
 
     .mainContentDiv {
@@ -195,7 +215,6 @@
 
     .mainDiv {
         grid-template-columns: 1fr;
-        background-color: yellow;
     }
 
     .mainContentDiv {

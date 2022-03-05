@@ -5,13 +5,17 @@ import { Route, Routes, Outlet } from "react-router-dom";
 import { Signup } from "./LSPL/Signup";
 import { Otp } from "./LSPL/Otp";
 import Home from "./Pages/Home";
+import { Cart } from "./Pages/Cart";
 export const RouterPage = (props) => {
   return (
     <>
       {props.children}
+      <Outlet />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Home />} />
+        <Route path=":id" element={
+            <ProductDetail fetchURL={"https://meesho-db.herokuapp.com/Men/"} />
+        } />
         <Route
           path="/Men"
           element={<Product fetchURL={"https://meesho-db.herokuapp.com/Men"} />}
@@ -145,9 +149,8 @@ export const RouterPage = (props) => {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/Otp" element={<Otp />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
-
-      <Outlet />
     </>
   );
 };

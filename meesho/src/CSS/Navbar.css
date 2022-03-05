@@ -5,8 +5,8 @@
     padding: 8px;
     align-items: center;
     border-bottom: 1px solid #acbbbc;
-    top: 0px;
     background-color: white;
+    width: 100%;
 }
 
 .leftView {
@@ -238,6 +238,7 @@
     align-items: center;
 }
 
+
 .cart p {
     font-size: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -250,6 +251,26 @@
 
 .dd {
     margin: 0px 3px;
+    position: relative;
+}
+
+.dd:hover{
+    cursor: pointer;
+}
+
+.count{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f43397;
+    top: -7px;
+    right: -2px;
+    font-size: 12px;
+    color: white;
 }
 
 .dd h3 {

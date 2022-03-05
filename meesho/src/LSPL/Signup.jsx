@@ -1,25 +1,13 @@
 
-import React from "react";
-import style from "./signup.module.css";
-import { useNavigate } from "react-router-dom";
-
-export const Signup = () => {
-  const navigate = useNavigate();
-  return (
-    <div className={style.body}>
-      <div className={style.mainSignupBox}>
-        <div className={style.img}>
-          <img
-            src="https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg"
-            className={style.img}
-          />
-
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import style from "./signup.module.css"
+import { useNavigate } from "react-router-dom";
 
-export const Signup = () => {
-    const [phoneNum, setPhoneNum] = useState("");
+
+  export const Signup = () => {
+  const navigate = useNavigate();
+  const [phoneNum, setPhoneNum] = useState("");
 
     const sendPhoneNum = (phoneNum) =>{
         if(phoneNum.length === 10){
@@ -91,6 +79,5 @@ export const Signup = () => {
           </div>
         </div>
       </div>
-    </div>
   );
-};
+ }

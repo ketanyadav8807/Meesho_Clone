@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { Product } from "./Components/PageProducts/Product";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { ProductDetail } from "./Components/productDetails/ProductDetail";
@@ -7,6 +8,7 @@ import Footer from "./Components/Footer";
 import { Navbar } from "./Components/Navbar";
 import { Sub_Navbar } from "./Components/Sub_Navbar";
 import Home from "./Pages/Home";
+import { Cart } from './Pages/Cart';
 
 function App() {
   const theme = createTheme({
@@ -24,10 +26,7 @@ function App() {
     <div className="container">
       <ThemeProvider theme={theme}>
         <Navbar />
-        {/* <Sub_Navbar /> */}
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
+        <Sub_Navbar />
         <Footer />
       </ThemeProvider>
     </div>

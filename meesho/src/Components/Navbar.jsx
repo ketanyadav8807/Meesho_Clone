@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "../CSS/Navbar.css"
 import '../Resp-css/Navbar-Resp.css'
 import {
@@ -17,9 +17,13 @@ import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import { CartContext } from '../Contexts/CartProvider';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
 
+    const navigate = useNavigate();
+    const { count, getCount } = useContext(CartContext)
     const [search, setSearch] = useState("")
     const [state, setState] = useState(false)
     const [hover, setHover] = useState(0)
@@ -27,6 +31,7 @@ export const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('resize', reportWindowSize);
+        getCount();
 
         return () => {
             window.removeEventListener('resize', reportWindowSize);
@@ -50,7 +55,7 @@ export const Navbar = () => {
     return (
         <div className='contactBox'>
             <div className='leftView'>
-                <div className='title'>
+                <div className='title' onClick={() => navigate("/")}>
                     <img src={require("../images/meeshoLogo.png")} alt="" />
                 </div>
                 <div className='inputField'>
@@ -72,7 +77,7 @@ export const Navbar = () => {
                     </div>
                     <span className='vrDivider'></span>
                 </div>
-                <div className='user'>
+                <div className='user' onClick={() => navigate("/signup")}>
                     <div className='profile'>
                        <PersonOutline style={{ fontSize: width < "1145" ?  30 : 35, paddingTop: width < "1145" ? 2 : 0, color:'#666666' }} />
                        <h3>Profile</h3>
@@ -98,7 +103,10 @@ export const Navbar = () => {
                         </div>
                     </div>
                     }
-                    <div className='dd' >
+                    <div className='dd' onClick={() => navigate("/cart")}>
+                        {count > 0 &&
+                        <div className="count"><p>{count}</p></div>
+                        }
                        <ShoppingCartOutlined style={{ fontSize: width < "1145" ?  30 : 35,  color:'#666666' }} />
                        <h3>Cart</h3>
                     </div>
