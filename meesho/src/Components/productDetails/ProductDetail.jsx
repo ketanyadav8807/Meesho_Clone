@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { LocalOfferOutlined, AssignmentReturnOutlined,AttachMoneyOutlined } from "@material-ui/icons";
 import {
   Box,
   Button,
@@ -157,7 +158,6 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                   component="div"
                   align="left"
                   color="black"
-                  
                   sx={{ marginRight: "15px", fontFamily: "Mier-Bold" }}
                 >
                   Rs.{data.discounted_price}
@@ -569,7 +569,208 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                 </Box>
               </Box>
             </CardContent>
+            <hr
+              style={{
+                margin: "2% 4%",
+                border: "none",
+                borderBottom: "1px solid rgb(201, 201, 201)",
+              }}
+            />
+            <CardContent>
+              <Typography color="rgb(102, 102, 102)" fontWeight={"700"}>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="rgb(231 231 231)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  iconSize="24"
+                  class="Icon-sc-1iwi4w1-0 dbskvy"
+                  style={{ margin: "0% 2% -2px 0%" }}
+                >
+                  <path d="M18.955 17.921c0-.018-.009-.045-.009-.063-.387-3.123-2.871-5.697-6.201-6.624a4.92 4.92 0 01-2.745.837 4.992 4.992 0 01-2.745-.837c-3.33.927-5.814 3.501-6.201 6.624 0 .018-.009.045-.009.063a7.297 7.297 0 00-.045.774C1 19.424 1.702 20 2.521 20h14.958c.819 0 1.521-.576 1.521-1.305 0-.261-.018-.522-.045-.774zM10 11.134c2.598 0 4.707-2.048 4.707-4.567S12.597 2 10 2 5.294 4.048 5.294 6.567c0 2.528 2.11 4.567 4.706 4.567z"></path>
+                </svg>
+                Sumathi Phillips
+              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Typography
+                  color="white"
+                  align="left"
+                  component="p"
+                  sx={{
+                    padding: "5px 10px",
+                    width: "fit-content",
+                    fontSize: "16px",
+                    borderRadius: "40px",
+                    border: "1px solid rgb(249, 249, 249)",
+                    marginTop: "5px",
+                    marginRight: "8px",
+
+                    backgroundColor: "rgb(236, 128, 61)",
+                  }}
+                >
+                  2 &#9733;
+                </Typography>
+                <Typography
+                  align="left"
+                  component="p"
+                  fontSize={12}
+                  color={"gray"}
+                >
+                  Posted on Oct 2021
+                </Typography>
+              </Box>
+              <Typography marginTop={"2%"}>
+                Stitches are lose but it's okay as material wise one time use is
+                okay
+              </Typography>
+              <Box
+                sx={{ display: "flex", alignItems: "center", marginTop: "2%" }}
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="rgb(231 231 231)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  size="16"
+                  iconSize="20"
+                  height={"20px"}
+                  style={{ margin: "0% 3% 0% 0%" }}
+                  class="Icon-sc-1iwi4w1-0 fsYLEx"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.712 5.245L8.68 1.13a1.039 1.039 0 011.51-.008c.258.268.366.647.294 1.018l-.68 3.402h4.046c1.54 0 2.578 1.635 1.977 3.106L13.492 14.3c-.229.542-.745.899-1.318.899H5.73c-.788 0-1.432-.669-1.432-1.486V6.293c0-.394.15-.773.415-1.048zm-1.847 8.471c0 .818-.645 1.486-1.433 1.486-.787 0-1.432-.668-1.432-1.486V7.773c0-.817.645-1.486 1.432-1.486.788 0 1.433.67 1.433 1.486v5.943z"
+                    fill="#666"
+                  ></path>
+                </svg>
+                <Typography
+                  align="left"
+                  component="p"
+                  fontSize={12}
+                  color={"gray"}
+                >
+                  Helpful (2)
+                </Typography>
+              </Box>
+            </CardContent>
+            <hr
+              style={{
+                margin: "2% 4%",
+                border: "none",
+                borderBottom: "1px solid rgb(201, 201, 201)",
+              }}
+            />
+            <CardContent>
+              <Typography color="rgb(102, 102, 102)" fontWeight={"700"}>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="rgb(231 231 231)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  iconSize="24"
+                  class="Icon-sc-1iwi4w1-0 dbskvy"
+                  style={{ margin: "0% 2% -2px 0%" }}
+                >
+                  <path d="M18.955 17.921c0-.018-.009-.045-.009-.063-.387-3.123-2.871-5.697-6.201-6.624a4.92 4.92 0 01-2.745.837 4.992 4.992 0 01-2.745-.837c-3.33.927-5.814 3.501-6.201 6.624 0 .018-.009.045-.009.063a7.297 7.297 0 00-.045.774C1 19.424 1.702 20 2.521 20h14.958c.819 0 1.521-.576 1.521-1.305 0-.261-.018-.522-.045-.774zM10 11.134c2.598 0 4.707-2.048 4.707-4.567S12.597 2 10 2 5.294 4.048 5.294 6.567c0 2.528 2.11 4.567 4.706 4.567z"></path>
+                </svg>
+                Aniket Chauhan
+              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Typography
+                  color="white"
+                  align="left"
+                  component="p"
+                  sx={{
+                    padding: "5px 10px",
+                    width: "fit-content",
+                    fontSize: "16px",
+                    borderRadius: "40px",
+                    border: "1px solid rgb(249, 249, 249)",
+                    marginTop: "5px",
+                    marginRight: "8px",
+
+                    backgroundColor: ratingBgColor,
+                  }}
+                >
+                  4 &#9733;
+                </Typography>
+                <Typography
+                  align="left"
+                  component="p"
+                  fontSize={12}
+                  color={"gray"}
+                >
+                  Posted on Oct 2021
+                </Typography>
+              </Box>
+              <Typography marginTop={"2%"}>Nice</Typography>
+              <Box
+                sx={{ display: "flex", alignItems: "center", marginTop: "2%" }}
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="rgb(231 231 231)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  size="16"
+                  iconSize="20"
+                  height={"20px"}
+                  style={{ margin: "0% 3% 0% 0%" }}
+                  class="Icon-sc-1iwi4w1-0 fsYLEx"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.712 5.245L8.68 1.13a1.039 1.039 0 011.51-.008c.258.268.366.647.294 1.018l-.68 3.402h4.046c1.54 0 2.578 1.635 1.977 3.106L13.492 14.3c-.229.542-.745.899-1.318.899H5.73c-.788 0-1.432-.669-1.432-1.486V6.293c0-.394.15-.773.415-1.048zm-1.847 8.471c0 .818-.645 1.486-1.433 1.486-.787 0-1.432-.668-1.432-1.486V7.773c0-.817.645-1.486 1.432-1.486.788 0 1.433.67 1.433 1.486v5.943z"
+                    fill="#666"
+                  ></path>
+                </svg>
+                <Typography
+                  align="left"
+                  component="p"
+                  fontSize={12}
+                  color={"gray"}
+                >
+                  Helpful (2)
+                </Typography>
+              </Box>
+            </CardContent>
           </Card>
+          <Box
+            sx={{
+              display: "Flex",
+              alignItems: "center",
+              justifyItems: "center",
+              justifyContent: "space-around",
+              backgroundColor: "rgb(231, 238, 255)",
+              padding: "4% 1%",
+              borderRadius: "3%",
+            }}
+          >
+            <LocalOfferOutlined htmlColor="rgb(244,51,151)" />
+            <Typography fontSize="14px">Lowest Price</Typography>
+            <hr
+              style={{
+                width: "1px",
+                height: "2em",
+                border: "none",
+                borderLeft: "1px solid white",
+              }}
+            />
+            <AssignmentReturnOutlined htmlColor="rgb(244,51,151)" />
+            <Typography fontSize="14px">7 Day Return</Typography>
+            <hr
+              style={{
+                width: "1px",
+                height: "2em",
+                border: "none",
+                borderLeft: "1px solid white",
+              }}
+            />
+            
+            <div>
+            <AttachMoneyOutlined htmlColor="rgb(244,51,151)"  /></div>
+            <Typography fontSize="14px">Cash on Delivery</Typography>
+          </Box>
         </Grid>
       </Grid>
     </>
