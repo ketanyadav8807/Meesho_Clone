@@ -22,6 +22,7 @@ export const Product = ({ fetchURL }) => {
   const location = useLocation().pathname.slice(1);
   const title = location.replace("_", " ");
   getCount()
+  document.title = title;
   const NextButton = () => {
     return (
       <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
