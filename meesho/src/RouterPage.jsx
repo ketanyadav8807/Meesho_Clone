@@ -6,6 +6,7 @@ import { Signup } from "./LSPL/Signup";
 import { Otp } from "./LSPL/Otp";
 import Home from "./Pages/Home";
 import { Address } from "./Components/PageProducts/Address";
+import { NotFound } from "./Pages/NotFound";
 export const RouterPage = (props) => {
   return (
     <>
@@ -146,6 +147,7 @@ export const RouterPage = (props) => {
         />
          <Route path="/signup" element={<Signup />} /> 
         <Route path="/Otp" element={<Otp />} /> 
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Outlet />
