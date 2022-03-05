@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import style from "./signup.module.css"
+import style from "../CSS/signup.module.css"
 
 export const Otp = () => {
     const otp = Math.floor(100000 + Math.random() * 900000);
@@ -38,7 +38,6 @@ export const Otp = () => {
     
   return (
     <div className={style.body}>
-        
         <div className={style.mainSignupBox}>
             <div className={style.img}>
                 <img src='https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg' className={style.img}/>

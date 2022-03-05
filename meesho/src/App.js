@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import { Product } from "./Components/PageProducts/Product";
-import { ThemeProvider, createTheme } from "@mui/material";
-import { ProductDetail } from "./Components/productDetails/ProductDetail";
+import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import Footer from "./Components/Footer";
-import { Navbar } from "./Components/Navbar";
-import { Sub_Navbar } from "./Components/Sub_Navbar";
-import Home from "./Pages/Home";
+import { Address } from './Components/PageProducts/Address';
 import { Cart } from './Pages/Cart';
+import { Dashboard } from './Pages/Dashboard';
+import { ThemeProvider, createTheme } from "@mui/material";
+import { Signup } from './LSPL/Signup';
+import { Otp } from './LSPL/Otp';
+import { Auth, Login } from './Pages/Auth';
+import { Checkout } from './Pages/Checkout';
 
 function App() {
   const theme = createTheme({
@@ -25,10 +25,13 @@ function App() {
   return (
     <div className="container">
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Sub_Navbar />
-        <Footer />
+        <Routes>
+          <Route path="/*" element={<Dashboard />} />
+          <Route path="/checkout/*" element={<Checkout />} />
+          <Route path="/auth/*" element={<Auth />} />
+        </Routes>
       </ThemeProvider>
+
     </div>
   );
 

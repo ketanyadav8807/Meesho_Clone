@@ -72,7 +72,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
           console.log(d)
           setIsLoading(false)
           getCount();
-          navigate("/cart")
+          navigate("/checkout/cart")
       })
   } catch (error) {
       console.log(error)
@@ -80,6 +80,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   }
   }
 
+  console.log(selected)
   if(isLoading) return <Loading/>
   return (
     <>
@@ -110,7 +111,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
             order: { xs: 1, sm: 1, md: 1, lg: 2 },
           }}
           md={4}
-        >
+        > 
           <Grid
             item
             my={2}
@@ -354,7 +355,6 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                     }}
                     disableRipple
                     disableElevation
-                    onClick={() => setSelected(size.id)}
                   >
                     {size}
                   </Button>

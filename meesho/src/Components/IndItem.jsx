@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "../CSS/Cart.css"
-import { Modal } from '@material-ui/core';
-import {AddBox,IndeterminateCheckBox} from '@material-ui/icons';
+import { CircularProgress, Modal } from '@material-ui/core';
+import {AddBox,Close,IndeterminateCheckBox} from '@material-ui/icons';
 
 export const IndItem = ({item, handleDelete, increment, decrement, removeId, open, setOpen, handleClose}) => {
 
@@ -32,12 +32,21 @@ export const IndItem = ({item, handleDelete, increment, decrement, removeId, ope
        aria-labelledby="simple-modal-title"
        aria-describedby="simple-modal-description"
     >
-        <div style={{height:"100vh", display:"flex", justifyContent:"center", alignItems:"center"}}>  
-      <div style={{width:200, height:200, display:"flex", flexDirection:"column", alignItems:"center",  backgroundColor:"white"}}>
-           <p>Do you want to remove item</p>
-           <div>
-           <p onClick={() => handleDelete(removeId)}>Yes</p>
-           <p onClick={() => setOpen(false)}>No</p>
+        <div className='screenView'>  
+      <div className='modalView'>
+           <div className='closeIconView'>
+                <Close style={{fontSize:22}} onClick={() => setOpen(false)}/>
+           </div>
+           <div className='modalTitle'>
+                <p>Do you want to remove item</p>
+           </div>
+           <div className='buttons'>
+               <div className='btn' onClick={() => handleDelete(removeId)}>
+                  <p>Yes</p>
+               </div>
+               <div className='btn' onClick={() => setOpen(false)}>
+                  <p>No</p>
+               </div>
            </div>
       </div>
       </div>

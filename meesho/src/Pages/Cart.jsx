@@ -191,7 +191,7 @@ console.log(charges)
                <p className='total'>Order Total</p>
                <p className="totalCharge">{totalCharges + deliveryCharge - discount}</p>
                </div>
-            <div className='continueBtn'>
+            <div className='continueBtn' onClick={() => navigate("/checkout/address")}>
               <p>Continue</p>
             </div>
             </div>

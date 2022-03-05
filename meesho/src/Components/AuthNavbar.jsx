@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import "../CSS/Navbar.css"
-import '../Resp-css/Navbar-Resp.css'
+import "../CSS/AuthNavbar.css"
 import {
     ShoppingCartOutlined,
     PersonOutline,
@@ -17,14 +16,11 @@ import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import { CartContext } from '../Contexts/CartProvider';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export const Navbar = () => {
+export const AuthNavbar = () => {
 
-    const location = useLocation();
     const navigate = useNavigate();
-    const { count, getCount } = useContext(CartContext)
     const [search, setSearch] = useState("")
     const [state, setState] = useState(false)
     const [hover, setHover] = useState(0)
@@ -32,7 +28,6 @@ export const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('resize', reportWindowSize);
-        getCount();
         return () => {
             window.removeEventListener('resize', reportWindowSize);
         }
@@ -51,7 +46,6 @@ export const Navbar = () => {
         setSearch("")
     }
 
-    let currentPage = location.pathname;
     console.log(width)
     return (
         <div className='contactBox'>
@@ -67,50 +61,13 @@ export const Navbar = () => {
             </div>
 
             <div className='rightView'>
-                <div className='rightViewContent'>
-                    <div className='app'>
-                        <PhoneAndroidOutlined style={{fontSize:width < "1335" ?  25 : width < "1145" ? 22 : 30, color:'#666666'}} />
-                        <h3 >Download App</h3>
-                    </div>
-                    <span className='vrDivider'></span>
                     <div className='cdd'>
-                        <h3 >Become a Supplier</h3>
-                    </div>
+                    <PhoneAndroidOutlined style={{fontSize:width < "1335" ?  25 : width < "1145" ? 22 : 30, color:'#666666'}} />
+                        <h3 >Download App</h3>
                     <span className='vrDivider'></span>
                 </div>
                     <div className='user'>
-                    <div className='profile' onClick={() => navigate("/auth/signup")}>
-                       <PersonOutline style={{ fontSize: width < "1145" ?  30 : 35, paddingTop: width < "1145" ? 2 : 0, color:'#666666' }} />
-                       <h3>Profile</h3>
-                    </div>
-                        {hover === 1 &&
-                    <div className='profileDetail'>
-                        <div className='userView'>
-                            <AccountCircle style={{ fontSize: 60, color: '#f7f9ff' }} />
-                            <div className='userContent'>
-                                <h2>Hello User</h2>
-                                <p>+8605817892</p>
-                            </div>
-                        </div>
-                        <div className='hrDivider1'></div>
-                        <div className='logoutView'>
-                            <LocalMallOutlined style={{ fontSize: 30, color: 'black' }} />
-                            <p>My Orders</p>
-                        </div>
-                        <div className='hrDivider1'></div>
-                        <div className='logoutView'>
-                            <ExitToApp style={{ fontSize: 30, color: 'black' }} />
-                            <p>Logout</p>
-                        </div>
-                    </div>
-                    }
-                    <div className='dd' onClick={() => navigate("/checkout/cart")}>
-                        {count > 0 &&
-                        <div className="count"><p>{count}</p></div>
-                        }
-                       <ShoppingCartOutlined style={{ fontSize: width < "1145" ?  30 : 35,  color:'#666666' }} />
-                       <h3>Cart</h3>
-                    </div>
+                    <h3 >Become a Supplier</h3>
                 </div>
             </div>
             <div className='respContactBox'>
@@ -161,36 +118,3 @@ export const Navbar = () => {
         </div>
     );
 };
-
-    // <>
-    //     <div className='contactBox'>
-    //         <div className='firstView'>
-    //             <div className='title'>
-    //                 <img src={require("../images/meeshoLogo.png")} alt="" />
-    //             </div>
-    //             <div className='inputField'>
-    //                 <SearchOutlined style={{ fontSize: 40, color: "#dbdbdb" }} className="searchIcon" />
-    //                 <input type="text" value={search} placeholder="Try Saree, Kurti or Search by Product Code" className='input' onChange={handleChange} />
-    //                 {isClicked && <CloseOutlined style={{ fontSize: 30 }} className="closeIcon" onClick={handleCancel} />}
-    //             </div>
-    //         </div>
-    //         <div className='secondView'>
-    //             <div className='getApp'>
-    //                 <PhoneAndroidOutlined style={{ fontSize: 30 }} />
-    //                 <p>Download app</p>
-    //             </div>
-    //             <div className='divider'></div>
-    //             <div className='supplier'>
-    //                 <p>Become a supplier</p>
-    //             </div>
-    //             <div className='divider2'></div>
-    //             <div className='profile' >
-    //                 
-    //                 
-    //             </div>
-    //             <div className='cart'>
-
-    //             </div>
-    //         </div>
-    //     </div>
-    // </>

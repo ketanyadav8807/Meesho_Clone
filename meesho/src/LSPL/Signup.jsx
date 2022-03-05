@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
-import style from "./signup.module.css"
+import style from "../CSS/signup.module.css"
 import { useNavigate } from "react-router-dom";
 
 
@@ -19,6 +19,10 @@ import { useNavigate } from "react-router-dom";
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             })
+            .then(r => {
+              console.log(r.json())
+              navigate("/auth/otp")
+            })
         }
         else{
             alert("Invalid Phone Number")
@@ -28,7 +32,6 @@ import { useNavigate } from "react-router-dom";
 
   return (
     <div className={style.body}>
-        
         <div className={style.mainSignupBox}>
             <div className={style.img}><img src='https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg' className={style.img}/></div>
             <div className={style.upperPart}>
@@ -49,7 +52,7 @@ import { useNavigate } from "react-router-dom";
             </div>
 
         </div>
-        <div className={style.upperPart}>
+        {/* <div className={style.upperPart}>
           <h3>Sign Up to view your profile</h3>
           <div>
             <p>Country</p>
@@ -77,7 +80,7 @@ import { useNavigate } from "react-router-dom";
             <span className={style.textColor}>Terms & Conditions</span> and{" "}
             <span className={style.textColor}>Privacy Policy</span>
           </div>
-        </div>
+        </div> */}
       </div>
   );
  }

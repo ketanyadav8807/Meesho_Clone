@@ -36,7 +36,6 @@
 
 .cartContainer{
     width: 100%;
-    height: 100vh;
     padding: 50px 300px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -46,7 +45,7 @@
     width: 100%;
     height: 100%;
     padding: 0px 19px;
-    border-right: 1px solid #666666;
+    border-right: 1px solid #dbdbdb;
 }
 
 .itemDetailsTitleView{
@@ -62,7 +61,7 @@
     width: 0.2px;
     height: 22px;
     margin: 0px 15px;
-    background-color: #666666;
+    background-color: #dbdbdb;
 }
 
 .itemCount{
@@ -79,7 +78,7 @@
     width: 100%;
     height: 150px;
     background-color: white;
-    border: 1px solid #666666;
+    border: 1px solid #dbdbdb;
     padding: 19px;
     margin: 19px 0px;
     display: flex;
@@ -189,7 +188,7 @@
     width: 100%;
     height: 0.5px;
     margin: 20px 0;
-    background-color: #666666;
+    background-color: #dbdbdb;
 }
 
 .total{
@@ -222,3 +221,68 @@
     color: white;
 }
 
+.screenView{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalView{
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.closeIconView{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modalTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modalTitle p{
+    font-size: 25px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.btn{
+    width: 40%;
+    height: 50px;
+    background-color: #f43397;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn p{
+    font-size: 18px;
+    color: white;
+}
