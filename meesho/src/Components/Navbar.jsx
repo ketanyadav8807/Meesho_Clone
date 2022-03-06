@@ -54,18 +54,20 @@ export const Navbar = () => {
 
   const displaySearch = async (e) => {
     let searchedData = [];
-    let resp = await endpoints
-      .map(
-        async(endpoint) => await fetch(`https://meesho-db.herokuapp.com/${endpoint}?q=${search}`).then((res) => res.json()).then((data) => {
-        if (data.length != 0) {
-          searchedData.push(data);
-        }
-      })
-      .catch((err) => console.log(err))
-      )
+    let resp = await endpoints.map(
+      async (endpoint) =>
+        await fetch(`https://meesho-db.herokuapp.com/${endpoint}?q=${search}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.length != 0) {
+              searchedData.push(data);
+            }
+          })
+          .catch((err) => console.log(err))
+    );
 
     Promise.all(resp)
-      .then(() => navigate("/DisplaySearchedProducts", { state:searchedData }))
+      .then(() => navigate("/DisplaySearchedProducts", { state: searchedData }))
       .catch((err) => console.log(err));
   };
 
@@ -227,10 +229,14 @@ export const Navbar = () => {
               isLoggedIn ? navigate("/checkout/cart") : navigate("/auth/signup")
             }
           >
-            {count > 0 && (
-              <div className="count">
-                <p>{count}</p>
-              </div>
+            {isLoggedIn && (
+              <>
+                {count > 0 && (
+                  <div className="count">
+                    <p>{count}</p>
+                  </div>
+                )}
+              </>
             )}
             <ShoppingCartOutlined
               style={{ fontSize: width < "1145" ? 30 : 35, color: "#666666" }}
