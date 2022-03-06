@@ -24,14 +24,31 @@ export const Product = ({ fetchURL }) => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
   const [begin, setBegin] = useState(0);
-  const [end, setEnd] = useState(5);
+  const [end, setEnd] = useState(8);
   const [total, setTotal] = useState(0);
   const location = useLocation().pathname.slice(1);
   const title = location.replace("_", " ");
   getCount();
+  useEffect(() => {
+    setBegin(0);
+    setEnd(8);
+    fetch(`${fetchURL}`)
+      .then((res) => res.json())
+      .then((d) => {
+        setIsDataLoading(false);
+        setTotal(d.length);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsDataLoading(false);
+      });
+  }, []);
   document.title = title;
   const NextButton = () => {
-    return (
+    document.documentElement.scrollTop = 0;
+    return end == total ? (
+      <></>
+    ) : (
       <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
         NEXT
       </Button>
@@ -39,7 +56,7 @@ export const Product = ({ fetchURL }) => {
   };
 
   const PrevButton = () => {
-    return begin >= 5 ? (
+    return begin >= 8 ? (
       <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => prev()}>
         PREVIOUS
       </Button>
@@ -62,13 +79,13 @@ export const Product = ({ fetchURL }) => {
   }, [begin, end, fetchURL]);
 
   const next = () => {
-    setBegin((prev) => prev + 5);
-    setEnd((prev) => prev + 5);
+    setBegin((prev) => prev + 8);
+    setEnd((prev) => prev + 8);
   };
   const prev = () => {
-    if (begin >= 5) {
-      setBegin((prev) => prev - 5);
-      setEnd((prev) => prev - 5);
+    if (begin >= 8) {
+      setBegin((prev) => prev - 8);
+      setEnd((prev) => prev - 8);
     }
   };
   return (
@@ -157,7 +174,7 @@ export const Product = ({ fetchURL }) => {
         sx={{ display: "flex", margin: "4% auto", justifyContent: "center" }}
       >
         <Pagination
-          count={Math.round(total / 5)}
+          count={Math.round(total / 8)}
           color="primary"
           sx={{ textAlign: "center" }}
           onChange={({ event, value }) => setPage(value)}
