@@ -9,7 +9,7 @@
 .container {
   width: 100%;
   height: 100vh;
-  /* overflow-x: hidden; */
+  position: relative;
 }
 
 .firstView {
@@ -182,7 +182,7 @@
 }
 
 .download {
-  width: 460px;
+  width: 10%;
   margin: 15px 0;
   display: flex;
   flex-direction: row;
@@ -190,8 +190,8 @@
 }
 
 .download img {
-  width: 220px;
-  height: 55px;
+  width: 10%;
+  height: 10vh;
 }
 
 .accordion {
@@ -267,4 +267,22 @@
 .hiddenNav p {
   font-size: 22px;
   font-weight: 600;
+}
+
+.loadingContainer{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background-color: #666666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingContainer img{
+  width: 80px;
+  height: 80px;
 }

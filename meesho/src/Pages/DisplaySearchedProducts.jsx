@@ -6,6 +6,7 @@ export const DisplaySearchedProducts = () => {
   const { state } = useLocation();
   console.log(state);
   useEffect(() => {
+    
     let display = state.map((products) =>
       products.map((item) => (
         <SingleProduct
