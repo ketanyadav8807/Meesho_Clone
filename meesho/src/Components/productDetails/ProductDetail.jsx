@@ -6,30 +6,37 @@ import {
   Card,
   CardContent,
   Grid,
+  Skeleton,
   Typography,
 } from "@mui/material";
 import { CartIcon } from "../../Icon/CartIcon";
-import {Loading} from "../../Components/Loading"
+import { Loading } from "../../Components/Loading";
 import { CartContext } from "../../Contexts/CartProvider";
-import { LocalOfferOutlined, AssignmentReturnOutlined,AttachMoneyOutlined } from "@material-ui/icons";
+import {
+  LocalOfferOutlined,
+  AssignmentReturnOutlined,
+  AttachMoneyOutlined,
+} from "@material-ui/icons";
 
 export const ProductDetail = ({ refItem, fetchURL }) => {
-  const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDataLoading, setIsDataLoading] = useState(false);
   const [data, setData] = useState({});
   const [img, setImg] = useState([]);
   const [selected, setSelected] = useState(null);
   let { id } = useParams();
   useEffect(() => {
+    setIsDataLoading(true);
     fetch(`${fetchURL}/${id}`)
       .then((res) => res.json())
       .then((d) => {
         setData(d);
         setImg(d.images);
         setSelected(d.images[0]);
-        console.log(d);
+        setIsDataLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err);setIsDataLoading(false);});
   }, []);
 
   const changeSelectedImg = (imgUrl) => {
@@ -51,38 +58,40 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
     productDetailsArray.push([i, productDetails[i]]);
   }
 
-  const {getCount} = useContext(CartContext)
+  const { getCount } = useContext(CartContext);
 
   const handleCart = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       fetch(`https://meesho-db.herokuapp.com/cart`, {
-          method: "POST",
-          headers: {
-              "content-type": "application/json",
-          },
-          body:JSON.stringify({
-            ...data,
-            quantity:1
-          })
-      }).then((r) => {
-          console.log(r)
-          r.json();
-      }
-      ).then((d) => {
-          console.log(d)
-          setIsLoading(false)
-          getCount();
-          navigate("/checkout/cart")
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          quantity: 1,
+        }),
       })
-  } catch (error) {
-      console.log(error)
-      setIsLoading(false)
-  }
-  }
+        .then((r) => {
+          console.log(r);
+          r.json();
+        })
+        .then((d) => {
+          console.log(d);
+          setIsLoading(false);
+          getCount();
+          navigate("/checkout/cart");
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
 
-  console.log(selected)
-  if(isLoading) return <Loading/>
+  console.log(selected);
+  if (isLoading) return <Loading />;
+  // if (isDataLoading) return <Skeleton animation="wave" variant="rectangular" width={210} height={118}  />;
   return (
     <>
       <Grid container columns={12} width={"80%"} marginLeft="10%" my={5}>
@@ -95,14 +104,14 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
             order: { xs: 2, sm: 2, md: 2, lg: 1 },
           }}
         >
-          {img &&
+          {!isDataLoading ? (img &&
             img.map((imgUrl) => (
               <img
                 src={imgUrl}
                 width="45px"
                 onClick={(e) => changeSelectedImg(e.currentTarget.src)}
               />
-            ))}
+            ))):(<Skeleton animation="wave" variant="rectangular" width={45} height={118}  />)}
         </Grid>
         <Grid
           sx={{
@@ -112,7 +121,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
             order: { xs: 1, sm: 1, md: 1, lg: 2 },
           }}
           md={4}
-        > 
+        >
           <Grid
             item
             my={2}
@@ -125,7 +134,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               boxSizing: "border-box",
             }}
           >
-            <img
+            {!isDataLoading ? (<img
               src={selected}
               style={{
                 objectFit: "contain",
@@ -134,7 +143,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                 minHeight: "100%",
                 maxHeight: "100%",
               }}
-            />
+            />):(<Skeleton animation="wave" variant="rectangular" width={358} height={600}  />)}
           </Grid>
           <Grid item py={2} borderBottom="1px solid rgba(0, 0, 0, 0.2)">
             <Button
@@ -168,7 +177,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
               boxShadow: "none",
             }}
           >
-            <CardContent sx={{ fontSize: "25px" }}>
+            {!isDataLoading ?(<CardContent sx={{ fontSize: "25px" }}>
               <Typography
                 component="div"
                 color="gray"
@@ -318,7 +327,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                   Reviews
                 </Typography>
               </Grid>
-            </CardContent>
+            </CardContent>):(<Skeleton animation="wave" variant="rectangular" width={708} height={600}  />)}
           </Card>
 
           <Card
@@ -803,9 +812,10 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
                 borderLeft: "1px solid white",
               }}
             />
-            
+
             <div>
-            <AttachMoneyOutlined htmlColor="rgb(244,51,151)"  /></div>
+              <AttachMoneyOutlined htmlColor="rgb(244,51,151)" />
+            </div>
             <Typography fontSize="14px">Cash on Delivery</Typography>
           </Box>
         </Grid>
