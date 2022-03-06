@@ -82,16 +82,16 @@ export const Product = ({ fetchURL }) => {
   }, [begin, end, fetchURL]);
 
   const next = () => {
-    if(total >= 8){
+    if((total-end) >= 8){
       setBegin((prev) => prev + 8);
       setEnd((prev) => prev + 8);
     }
     else{
-      setBegin((prev) => prev + total);
-    setEnd((prev) => prev + total);
+      setBegin((prev) => prev + 9);
+    setEnd((prev) => prev + total-end);
     }
+}
     
-  };
   const prev = () => {
     if (begin >= 8) {
       setBegin((prev) => prev - 8);
