@@ -1,50 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import style from "../CSS/signup.module.css"
 import OtpInput from 'react-otp-input';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/AuthProvider';
 
 export const Otp = () => {
 
     const navigate = useNavigate();
+    const {result, getToken} = useContext(AuthContext);
+    const [otpInp, setOtpInp] = useState("")
 
-    const [otpInp, setotpInp] = useState("")
-  const handleChange = (otpIn) => {
-      setotpInp(otpIn);
-  }
-
-    const otp = Math.floor(100000 + Math.random() * 900000);
-    const [num, setNum] = useState("");
-    const [time, setTime] = useState(60);
+    const handleChange = (otpin) => {      
+      setOtpInp(otpin);
+    }
 
     useEffect(() => {
-       fetch("https://meesho-db.herokuapp.com/User")
-       .then((res)=> res.json())
-       .then((res)=> setNum(res[0].Num))
-
-    //    setTimeout(() => {
-    //     if(otp){
-    //         alert(`Your OTP is . . . ${otp}`)
-    //        }
-    //    }, 1000);
-
-        const interval =  setInterval(() => {
-            setTime((prev)=>{
-                if(prev > 0){
-                    return prev-1;
-                }
-                else{
-                    clearInterval(interval);
-                    return prev;
-                }
-            })
-            }, 1000);
-
-        return () => {
-            clearInterval(interval);
-        }
 
     }, [])
 
+    const handleVerify = () => {
+        if(otpInp.length === 6){
+        result.confirm(otpInp).then((result) => {
+            // User signed in successfully.
+            navigate("/checkout/cart")
+            const user = result.user;
+            console.log(user.uid);
+            localStorage.setItem("userToken", JSON.stringify(user.uid));
+            getToken();
+            // ...
+          }).catch((error) => {
+            // User couldn't sign in (bad verification code?)
+            // ...
+            console.log(error)
+            window.location.reload();
+          });
+        }
+    } 
     
   return (
     <div className={style.body}>
@@ -53,7 +44,6 @@ export const Otp = () => {
                 <img src='https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg' className={style.img}/>
             </div>
             <div className={style.upperPart}>
-                <h3 className={style.EnterOtpTo}>Enter OTP sent to {num}</h3>
                 <div><h4 className={style.ChangeNum}>CHANGE NUMBER</h4></div>
 
                 <OtpInput
@@ -62,10 +52,7 @@ export const Otp = () => {
                     numInputs={6}
                     inputStyle={{width: "45px", outline: "none" , border: "none" , borderBottom: "1.5px solid grey", marginRight: "10px", marginTop: "65px", fontSize: "17px", fontWeight: "550", lineHeight: "40px"}}
                 />
-
-                <div className={style.time}>{time > 0 ? `Resend OTP in ${time} s` : ""}</div>
-                <div><h4 className={style.ChangeNumm}>{time === 0 ? "RESEND OTP" : ""}</h4></div>
-                <div><button className={style.SendOTP}>Verify</button></div>
+                <div><button className={style.SendOTP} onClick={() => handleVerify()}>Verify</button></div>
             </div>
         
             <div className={style.lowerPart}>

@@ -1,5 +1,6 @@
 .homeContainer {
     width: 100%;
+    box-sizing: border-box;
     padding: 0px 150px;
 }
 
@@ -123,7 +124,7 @@
     width: 100%;
     height: 85vh;
     background-image: url("https://meesho.com/_next/static/images/download_banner-19ca4d63d9c1dc44bc8cbfae62b60bd7.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -136,7 +137,7 @@
 
 .ResellerContentView {
     width: 42vw;
-    height: 340px;
+    height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,13 +145,13 @@
 }
 
 .ResellerTitle {
-    font-size: 40px;
+    font-size: 2.4vw;
     font-weight: 700;
     color: #5585f8;
 }
 
 .ResellerSubTitle {
-    font-size: 55px;
+    font-size: 3.5vw;
     font-weight: 700;
     color: #f43397;
     text-align: end;
@@ -178,13 +179,13 @@
 }
 
 .SupplierTitle {
-    font-size: 45px;
+    font-size: 2.5vw;
     color: white;
     font-weight: 600;
 }
 
 .SupplierSubTitle {
-    font-size: 25px;
+    font-size: 1.8vw;
     color: white;
 }
 
@@ -201,7 +202,7 @@
 
 .indBenefit p {
     color: white;
-    font-size: 21px;
+    font-size: 1.6vw;
     font-weight: 600;
     margin: 0px 15px;
 }

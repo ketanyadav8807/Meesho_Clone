@@ -12,6 +12,16 @@ import {
 import { CartIcon } from "../../Icon/CartIcon";
 import { Loading } from "../../Components/Loading";
 import { CartContext } from "../../Contexts/CartProvider";
+ 
+import { AuthContext } from "../../Contexts/AuthProvider";
+import { LocalOfferOutlined, AssignmentReturnOutlined,AttachMoneyOutlined } from "@material-ui/icons";
+
+export const ProductDetail = ({ refItem, fetchURL }) => {
+
+  
+  const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
+
 import {
   LocalOfferOutlined,
   AssignmentReturnOutlined,
@@ -26,6 +36,13 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   const [img, setImg] = useState([]);
   const [selected, setSelected] = useState(null);
   let { id } = useParams();
+
+  let authToken = JSON.parse(localStorage.getItem("userToken"));
+  let isLoggedIn = false 
+  if(authToken){
+     isLoggedIn = true
+  }
+  console.log(isLoggedIn)
   useEffect(() => {
     setIsDataLoading(true);
     fetch(`${fetchURL}/${id}`)
@@ -58,8 +75,8 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
     productDetailsArray.push([i, productDetails[i]]);
   }
 
-  const { getCount } = useContext(CartContext);
 
+  const {getCount} = useContext(CartContext)
   const handleCart = () => {
     setIsLoading(true);
     try {
@@ -81,13 +98,18 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
           console.log(d);
           setIsLoading(false);
           getCount();
-          navigate("/checkout/cart");
-        });
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
+
+          if(isLoggedIn){
+          navigate("/checkout/cart")
+          }else{
+            navigate("/auth/signup")
+          }
+      })
+  } catch (error) {
+      console.log(error)
+      setIsLoading(false)
+  }
+  }
 
   console.log(selected);
   if (isLoading) return <Loading />;

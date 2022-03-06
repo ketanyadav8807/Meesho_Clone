@@ -182,7 +182,7 @@
 }
 
 .download {
-  width: 460px;
+  width: 10%;
   margin: 15px 0;
   display: flex;
   flex-direction: row;
@@ -190,8 +190,8 @@
 }
 
 .download img {
-  width: 220px;
-  height: 55px;
+  width: 10%;
+  height: 10vh;
 }
 
 .accordion {
