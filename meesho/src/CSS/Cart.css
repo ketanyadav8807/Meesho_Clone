@@ -1,0 +1,288 @@
+.emptyCartContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyCartContainer img{
+    width: 350px;
+    height: 350px;
+}
+
+.emptyCartContainer p{
+    font-size: 19px;
+    margin: 19px 0;
+    letter-spacing: 1px;
+}
+
+.viewProductsBtn{
+    width: 200px;
+    height: 60px;
+    border: 2px solid #f43397;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewProductsBtn p{
+    color: #f43397;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+}
+
+.cartContainer{
+    width: 100%;
+    padding: 50px 300px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.itemDetails{
+    width: 100%;
+    height: 100%;
+    padding: 0px 19px;
+    border-right: 1px solid #dbdbdb;
+}
+
+.itemDetailsTitleView{
+    display: flex;
+    align-items: center;
+}
+
+.itemDetailsTitle{
+    font-size: 22px;
+}
+
+.dash{
+    width: 0.2px;
+    height: 22px;
+    margin: 0px 15px;
+    background-color: #dbdbdb;
+}
+
+.itemCount{
+    font-size: 22px;
+}
+
+.priceDetails{
+    width: 100%;
+    height: 100%;
+    padding: 0px 19px;
+}
+
+.indCartItem{
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: 19px;
+    margin: 19px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.indContent{
+    display: flex;
+}
+
+.indContent img{
+    width: 100px;
+    height: 110px;
+    resize: cover;
+    border-radius: 4px;
+}
+
+.contentView{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cartList{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.cartList::-webkit-scrollbar {
+    display: none;
+  }
+
+.itemTitle{
+    font-size: 19px;
+}
+
+.sizeView{
+    display: flex;
+}
+
+.size{
+    font-size: 19px;
+}
+
+.quantityView{
+    display: flex;
+    margin: 0px 15px;
+}
+
+.quantity{
+    font-size: 19px;
+    margin: 0px 5px;
+}
+
+.minus:hover{
+    cursor: pointer;
+}
+
+.plus:hover{
+    cursor: pointer;
+}
+
+.price{
+    font-size: 19px;
+}
+
+.remove{
+    font-size: 19px;
+    color: #f43397;
+    font-weight: 600;
+}
+
+.remove:hover{
+    cursor: pointer;
+}
+
+.priceView{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainPriceTitle{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.mainPrice{
+    font-size: 22px;
+}
+
+.deliCharges{
+    font-size: 22px;
+}
+
+.codCharges{
+    font-size: 22px;
+}
+
+.discount{
+    font-size: 22px;
+}
+
+.priceDivider{
+    width: 100%;
+    height: 0.5px;
+    margin: 20px 0;
+    background-color: #dbdbdb;
+}
+
+.total{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.charge{
+    font-size: 22px;
+}
+
+.totalCharge{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.continueBtn{
+    width: 100%;
+    height: 60px;
+    margin-top: 40px;
+    border-radius: 4px;
+    background-color: #f43397;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continueBtn p{
+    font-size: 24px;
+    color: white;
+}
+
+.screenView{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalView{
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.closeIconView{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modalTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modalTitle p{
+    font-size: 25px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.btn{
+    width: 40%;
+    height: 50px;
+    background-color: #f43397;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn p{
+    font-size: 18px;
+    color: white;
+}

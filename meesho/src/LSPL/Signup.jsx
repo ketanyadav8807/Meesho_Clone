@@ -1,30 +1,13 @@
 
-import React from "react";
-import style from "./signup.module.css";
-import { useNavigate } from "react-router-dom";
-
-export const Signup = () => {
-  const navigate = useNavigate();
-  return (
-    <div className={style.body}>
-      <div className={style.mainSignupBox}>
-        <div className={style.img}>
-          <img
-            src="https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg"
-            className={style.img}
-          />
-
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
-import style from "./signup.module.css"
-import {Clear} from '@material-ui/icons';
-import {IconButton} from "@mui/material"
-import { useNavigate } from "react-router-dom"
-export const Signup = () => {
+import style from "../CSS/signup.module.css"
+import { useNavigate } from "react-router-dom";
 
-    const navigate = useNavigate()
 
-    const [phoneNum, setPhoneNum] = useState("");
+  export const Signup = () => {
+  const navigate = useNavigate();
+  const [phoneNum, setPhoneNum] = useState("");
 
     const sendPhoneNum = (phoneNum) =>{
         if(phoneNum.length === 10){
@@ -36,6 +19,10 @@ export const Signup = () => {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             })
+            .then(r => {
+              console.log(r.json())
+              navigate("/auth/otp")
+            })
         }
         else{
             alert("Invalid Phone Number")
@@ -45,10 +32,6 @@ export const Signup = () => {
 
   return (
     <div className={style.body}>
-        <div className={style.title}>
-            <IconButton onClick={() => navigate("/home")}><Clear style={{fontSize: 26 , color: "#666362"}} /></IconButton>
-            <img src={require("../images/meeshoLogo.png")} alt="" style={{width: 100,height: 30, marginLeft: "3px", marginTop: "5px" }}/>
-        </div>
         <div className={style.mainSignupBox}>
             <div className={style.img}><img src='https://meesho.com/_next/static/images/authTopBanner-6792b3e68f63d623b8ba99556d38d56d.jpg' className={style.img}/></div>
             <div className={style.upperPart}>
@@ -69,7 +52,7 @@ export const Signup = () => {
             </div>
 
         </div>
-        <div className={style.upperPart}>
+        {/* <div className={style.upperPart}>
           <h3>Sign Up to view your profile</h3>
           <div>
             <p>Country</p>
@@ -97,8 +80,7 @@ export const Signup = () => {
             <span className={style.textColor}>Terms & Conditions</span> and{" "}
             <span className={style.textColor}>Privacy Policy</span>
           </div>
-        </div>
+        </div> */}
       </div>
-    </div>
   );
-};
+ }
