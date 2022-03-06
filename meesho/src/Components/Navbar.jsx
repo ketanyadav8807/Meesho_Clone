@@ -13,7 +13,6 @@ import {
   Menu,
 } from '@material-ui/icons'
 import { CartContext } from '../Contexts/CartProvider'
-import { AuthContext } from '../Contexts/AuthProvider'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Loading } from './Loading'
 import { DrawerUI } from './DrawerUI'

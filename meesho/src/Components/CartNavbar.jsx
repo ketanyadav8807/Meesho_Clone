@@ -6,9 +6,10 @@ import { Box } from "@mui/system";
 import { Outlet } from "react-router-dom";
 import { CheckoutContext } from "../Context/CheckoutContext";
 import logo from "../images/meeshoLogo.png";
+import { useNavigate } from 'react-router-dom'
 
 export const CartNavbar = () => {
-  const { steps, activeStep, completed, handleStep, handleNext } =
+  const { steps, activeStep, completed } =
     useContext(CheckoutContext);
   const useStyles = makeStyles(() => ({
     root: {
@@ -17,10 +18,11 @@ export const CartNavbar = () => {
     },
   }));
   const c = useStyles();
+  const navigate = useNavigate();
 
   return (
     <div className="cartNavbar">
-      <img src={logo} height="36px" alt="logo" />
+      <img src={logo} height="36px" alt="logo" onClick={() => navigate('/')} />
       <div className="stepper">
         <Stepper className={c.root} activeStep={activeStep} alternativeLabel>
           {steps.map((label, index) => (
