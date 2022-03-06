@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../CSS/Navbar.css";
 import "../Resp-css/Navbar-Resp.css";
+import { useSnackbar } from "react-simple-snackbar";
 import {
   ShoppingCartOutlined,
   PersonOutline,
@@ -24,6 +25,23 @@ export const Navbar = () => {
   const [state, setState] = useState(false);
   const [width, setWidth] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+
+  const options = {
+    position: "top-center",
+    style: {
+      backgroundColor: "#2e7d32",
+      border: "2px solid #2e7d32",
+      color: "white",
+      borderRadius: "15px",
+      fontSize: "20px",
+      textAlign: "center",
+    },
+    closeStyle: {
+      fontSize: "16px",
+    },
+  };
+
+  const [openSnackbar, closeSnackbar] = useSnackbar(options);
 
   let authToken = JSON.parse(localStorage.getItem("userToken"));
   let isLoggedIn = false;
@@ -57,6 +75,7 @@ export const Navbar = () => {
     localStorage.removeItem("userToken");
     setTimeout(() => {
       setIsLoading(false);
+      openSnackbar("Successfully logged out!");
     }, 500);
   };
 
@@ -109,7 +128,9 @@ export const Navbar = () => {
           </div>
           <span className="vrDivider"></span>
           <div className="cdd">
-            <h3 onClick={() => navigate("notfound/becomeasupplier")}>Become a Supplier</h3>
+            <h3 onClick={() => navigate("notfound/becomeasupplier")}>
+              Become a Supplier
+            </h3>
           </div>
           <span className="vrDivider"></span>
         </div>
