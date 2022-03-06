@@ -12,9 +12,15 @@ import { Checkout } from './Pages/Checkout';
 
 function App() {
   const theme = createTheme({
+    stepper: {
+      iconColor: "green", // or logic to change color
+    },
     palette: {
       primary: {
         main: "rgb(244, 51, 151);",
+      },
+      secondary: {
+        main: "#1976d2",
       },
     },
     typography: {
@@ -34,7 +40,5 @@ function App() {
 
     </div>
   );
-
 }
 export default App;
-

@@ -40,15 +40,15 @@ import { useNavigate } from "react-router-dom";
 
                 <div className={style.PhoneNumDiv}>
                     <h4 className={style.h4IN}><span className={style.IN}>IN</span>+91</h4>
-                    <TextField id="standard-basic" label="Phone Number" onChange={(e)=> setPhoneNum(e.currentTarget.value)}/>
+                    <TextField id="standard-basic" label="Phone Number" onChange={(e)=> setPhoneNum(e.currentTarget.value)} className={style.tests}/>
                 </div>
 
                 <div><button className={style.SendOTP} onClick={()=> sendPhoneNum(phoneNum)}>Send OTP</button></div>
             </div>
         
             <div className={style.lowerPart}>
-                <div>By continuing, you agree to Meesho’s</div>
-                <div><span className={style.textColor}>Terms & Conditions</span> and <span className={style.textColor}>Privacy Policy</span></div>
+                <div className={style.lowerPartLow}>By continuing, you agree to Meesho’s</div>
+                <div className={style.lowerPartLoww}><span className={style.textColor}>Terms & Conditions</span> and <span className={style.textColor}>Privacy Policy</span></div>
             </div>
 
         </div>
