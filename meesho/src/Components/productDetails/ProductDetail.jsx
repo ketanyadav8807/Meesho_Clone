@@ -34,7 +34,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   if (authToken) {
     isLoggedIn = true
   }
-  console.log(isLoggedIn)
+  console.log(isLoggedIn);
   useEffect(() => {
     setIsDataLoading(true)
     fetch(`${fetchURL}/${id}`)
@@ -50,6 +50,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
         setIsDataLoading(false)
       })
   }, [])
+
 
   const changeSelectedImg = (imgUrl) => {
     setSelected(imgUrl)
@@ -104,6 +105,7 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
       setIsLoading(false)
     }
   }
+
 
   console.log(selected)
   if (isLoading) return <Loading />

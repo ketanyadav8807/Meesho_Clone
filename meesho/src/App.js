@@ -9,6 +9,8 @@ import { Signup } from './LSPL/Signup';
 import { Otp } from './LSPL/Otp';
 import { Auth, Login } from './Pages/Auth';
 import { Checkout } from './Pages/Checkout';
+import SnackbarProvider from 'react-simple-snackbar'
+
 
 function App() {
   const theme = createTheme({
@@ -31,11 +33,14 @@ function App() {
   return (
     <div className="container">
       <ThemeProvider theme={theme}>
+        <SnackbarProvider>
         <Routes>
-          <Route path="/*" element={<Dashboard />} />
+          <Route index path="/*" element={<Dashboard />} />
           <Route path="/checkout/*" element={<Checkout />} />
           <Route path="/auth/*" element={<Auth />} />
+          <Route path="*" element={<Auth />} />
         </Routes>
+      </SnackbarProvider>
       </ThemeProvider>
 
     </div>
