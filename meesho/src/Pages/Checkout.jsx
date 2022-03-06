@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import '../App.css';
-import { Address } from '../Components/PageProducts/Address';
-import { Cart } from './Cart';
+import "../App.css";
+import { Address } from "../Pages/Address";
+import { Cart } from "./Cart";
 import { ThemeProvider, createTheme } from "@mui/material";
-import { CartNavbar } from '../Components/CartNavbar';
+import { CartNavbar } from "../Components/CartNavbar";
 import { Step, StepLabel, Stepper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import { Outlet } from "react-router-dom";
 import { CheckoutContext } from "../Context/CheckoutContext";
+import { ThankyouPage } from "./ThankyouPage";
 // import logo from "../../images/meeshoLogo.png";
 
 export const Checkout = () => {
@@ -37,14 +38,13 @@ export const Checkout = () => {
   return (
     <div className="container">
       <ThemeProvider theme={theme}>
-          <CartNavbar/>
+        <CartNavbar />
         <Routes>
-          <Route path='/cart' element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/address" element={<Address />} />
+          <Route path="/Thankyou" element={<ThankyouPage />} />
         </Routes>
       </ThemeProvider>
     </div>
   );
-
-}
-
+};

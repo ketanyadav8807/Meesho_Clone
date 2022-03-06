@@ -1,23 +1,14 @@
 import React, { useContext } from "react";
-import { CheckoutContext } from "../../Context/CheckoutContext";
+import { CheckoutContext } from "../Context/CheckoutContext";
 import { Box, TextField, Typography, Button } from "@mui/material";
+import  styles from "../CSS/Address.module.css"
 export const Address = () => {
-  const { handleNext } =
-    useContext(CheckoutContext);
+  const { handleNext } = useContext(CheckoutContext);
   return (
-    <div
-      style={{
-        color: "rbg(51,51,51)",
-        fontSize: "18px",
-        fontWeight: "600",
-        lineHeight: "24px",
-        width: "600px",
-        marginLeft: "10%",
-        letterSpacing: "0.5px",
-      }}
-    >
+    <div className={styles.container}>
       <p style={{ letterSpacing: "1px" }}> Select Delivery Address</p>
       <Box
+      className={styles.wrap}
         display={"flex"}
         sx={{
           flexDirection: "column",
@@ -157,6 +148,7 @@ export const Address = () => {
               variant="standard"
             />
           </div>
+          <div>
           <Button
             disableRipple
             variant="contained"
@@ -172,6 +164,7 @@ export const Address = () => {
           >
             Save Address & Continue
           </Button>
+          </div>
         </Box>
       </Box>
     </div>

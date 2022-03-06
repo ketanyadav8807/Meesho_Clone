@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import { Address } from './Components/PageProducts/Address';
+import { Address } from './Pages/Address';
 import { Cart } from './Pages/Cart';
 import { Dashboard } from './Pages/Dashboard';
 import { ThemeProvider, createTheme } from "@mui/material";
