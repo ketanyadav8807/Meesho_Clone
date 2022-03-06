@@ -1,4 +1,4 @@
-@media (min-width:1480px) and (max-width:1580px) {
+/* @media (min-width:1480px) and (max-width:1580px) {
 
     .FashionView {
         width: 100%;
@@ -241,7 +241,6 @@
     .mainDiv {
         padding: 60px 0px;
         grid-template-columns: 1fr;
-        background-color: yellow;
     }
 
     .mainContentDiv {
@@ -320,4 +319,4 @@
     .downloadApp p {
         font-size: 18px;
     }
-}
+} */

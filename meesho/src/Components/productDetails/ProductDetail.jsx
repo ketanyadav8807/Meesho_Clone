@@ -11,15 +11,25 @@ import {
 import { CartIcon } from "../../Icon/CartIcon";
 import {Loading} from "../../Components/Loading"
 import { CartContext } from "../../Contexts/CartProvider";
+import { AuthContext } from "../../Contexts/AuthProvider";
 import { LocalOfferOutlined, AssignmentReturnOutlined,AttachMoneyOutlined } from "@material-ui/icons";
 
 export const ProductDetail = ({ refItem, fetchURL }) => {
+
+  
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState({});
   const [img, setImg] = useState([]);
   const [selected, setSelected] = useState(null);
   let { id } = useParams();
+
+  let authToken = JSON.parse(localStorage.getItem("userToken"));
+  let isLoggedIn = false 
+  if(authToken){
+     isLoggedIn = true
+  }
+  console.log(isLoggedIn)
   useEffect(() => {
     fetch(`${fetchURL}/${id}`)
       .then((res) => res.json())
@@ -52,7 +62,6 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
   }
 
   const {getCount} = useContext(CartContext)
-
   const handleCart = () => {
     setIsLoading(true)
     try {
@@ -73,7 +82,11 @@ export const ProductDetail = ({ refItem, fetchURL }) => {
           console.log(d)
           setIsLoading(false)
           getCount();
+          if(isLoggedIn){
           navigate("/checkout/cart")
+          }else{
+            navigate("/auth/signup")
+          }
       })
   } catch (error) {
       console.log(error)

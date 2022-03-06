@@ -1,33 +1,58 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import style from "../CSS/signup.module.css"
 import { useNavigate } from "react-router-dom";
-
+import { authentication } from '../firebase';
+import { RecaptchaVerifier, signInWithPhoneNumber  } from "firebase/auth";
+import { AuthContext } from '../Contexts/AuthProvider';
 
   export const Signup = () => {
   const navigate = useNavigate();
   const [phoneNum, setPhoneNum] = useState("");
+  const {setResult} = useContext(AuthContext)
 
-    const sendPhoneNum = (phoneNum) =>{
-        if(phoneNum.length === 10){
-            const data = {
-                "Num": phoneNum,
-            }
-            fetch("https://meesho-db.herokuapp.com/User",{
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data)
-            })
-            .then(r => {
-              console.log(r.json())
-              navigate("/auth/otp")
-            })
+  // window.recaptchaVerifier = await new RecaptchaVerifier('sign-in-button', {
+  //   'size': 'invisible',
+  //   'callback': (response) => {
+  //     // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //     // onSignInSubmit()
+  //   },
+  //   defaultCountry:"IN"
+  // }, authentication);
+  // let appVerifier = window.recaptchaVerifier;
+  // signInWithPhoneNumber(authentication, phoneNumber, appVerifier)
+  // .then(confirmationResult => {
+  //   console.log(confirmationResult);
+  // }).catch((error) => {
+  //   console.log(error)
+  //   window.recaptchaVerifier.clear()
+
+    const getRecaptcha = () => {
+      window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+        'size': 'invisible',
+        'callback': (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          // onSignInSubmit()
+          console.log(response)
         }
-        else{
-            alert("Invalid Phone Number")
-        }
-    
+      }, authentication);
+    }
+
+    const sendOtp = () => {
+         if(phoneNum.length === 10){
+          let phoneNumber = `+91${phoneNum}`
+          console.log(phoneNumber)
+          getRecaptcha();  
+          let appVerifier = window.recaptchaVerifier;
+        signInWithPhoneNumber(authentication, phoneNumber, appVerifier)
+        .then(confirmationResult => {
+          setResult(confirmationResult)
+          navigate("/auth/otp")
+        }).catch((error) => {
+          console.log(error)
+        })
+      } 
     }
 
   return (
@@ -42,8 +67,9 @@ import { useNavigate } from "react-router-dom";
                     <h4 className={style.h4IN}><span className={style.IN}>IN</span>+91</h4>
                     <TextField id="standard-basic" label="Phone Number" onChange={(e)=> setPhoneNum(e.currentTarget.value)} className={style.tests}/>
                 </div>
+                <div id="sign-in-button"></div>   
+                <div><button className={style.SendOTP} onClick={()=> sendOtp()}>Send OTP</button></div>
 
-                <div><button className={style.SendOTP} onClick={()=> sendPhoneNum(phoneNum)}>Send OTP</button></div>
             </div>
         
             <div className={style.lowerPart}>
@@ -52,35 +78,6 @@ import { useNavigate } from "react-router-dom";
             </div>
 
         </div>
-        {/* <div className={style.upperPart}>
-          <h3>Sign Up to view your profile</h3>
-          <div>
-            <p>Country</p>
-          </div>
-          <div className={style.PhoneNumDiv}>
-            <h3>
-              <span>IN</span>+91
-            </h3>
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className={style.TelInp}
-            />
-          </div>
-          <div>
-            <button className={style.SendOTP} onClick={() => navigate("/Otp")}>
-              Send OTP
-            </button>
-          </div>
-        </div>
-
-        <div className={style.lowerPart}>
-          <div>By continuing, you agree to Meesho’s</div>
-          <div>
-            <span className={style.textColor}>Terms & Conditions</span> and{" "}
-            <span className={style.textColor}>Privacy Policy</span>
-          </div>
-        </div> */}
       </div>
   );
  }

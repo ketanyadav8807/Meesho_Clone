@@ -5,15 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './Contexts/CartProvider';
+import { CheckoutContextProvider } from './Context/CheckoutContext';
+import { AuthProvider } from './Contexts/AuthProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <CheckoutContextProvider>
+            <App />
+          </CheckoutContextProvider>
+        </CartProvider>
+      </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode >,
   document.getElementById('root')
 );
 

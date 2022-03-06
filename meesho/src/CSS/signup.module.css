@@ -53,6 +53,11 @@ body{
     border-radius: 6px;
     font-size: 18px;
 }
+
+.SendOTP:hover{
+    cursor: pointer;
+}
+
 .lowerPart{
     margin-top: 180px;
     font-size: 12px;
