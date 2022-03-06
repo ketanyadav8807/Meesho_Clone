@@ -4,7 +4,7 @@ import { ProductDetail } from "./Components/productDetails/ProductDetail";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Home from "./Pages/Home";
 import { NotFound } from "./Pages/NotFound";
-
+import { DisplaySearchedProducts } from "./Pages/DisplaySearchedProducts";
 export const RouterPage = (props) => {
   return (
     <>
@@ -148,6 +148,10 @@ export const RouterPage = (props) => {
               fetchURL={"https://meesho-db.herokuapp.com/Electronics/"}
             />
           }
+        />
+        <Route
+          path="/DisplaySearchedProducts"
+          element={<DisplaySearchedProducts />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

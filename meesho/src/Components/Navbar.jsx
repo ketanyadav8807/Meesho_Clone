@@ -40,6 +40,34 @@ export const Navbar = () => {
       fontSize: "16px",
     },
   };
+  const endpoints = [
+    "Women_Ethnic",
+    "Women_Western",
+    "Jewellery",
+    "Men",
+    "Beauty_Products",
+    "Bags_Footwear",
+    "Home_Kitchen",
+    "Kids",
+    "Electronics",
+  ];
+
+  const displaySearch = async (e) => {
+    let searchedData = [];
+    let resp = await endpoints
+      .map(
+        async(endpoint) => await fetch(`https://meesho-db.herokuapp.com/${endpoint}?q=${search}`).then((res) => res.json()).then((data) => {
+        if (data.length != 0) {
+          searchedData.push(data);
+        }
+      })
+      .catch((err) => console.log(err))
+      )
+
+    Promise.all(resp)
+      .then(() => navigate("/DisplaySearchedProducts", { state:searchedData }))
+      .catch((err) => console.log(err));
+  };
 
   const [openSnackbar, closeSnackbar] = useSnackbar(options);
 
@@ -90,6 +118,7 @@ export const Navbar = () => {
           <SearchOutlined
             style={{ fontSize: width < "1145" ? 35 : 40 }}
             className="searchIcon"
+            onClick={() => displaySearch()}
           />
           <input
             type="text"
