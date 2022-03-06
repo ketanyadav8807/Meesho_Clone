@@ -11,6 +11,7 @@ import {
 import { CartIcon } from "../../Icon/CartIcon";
 import {Loading} from "../../Components/Loading"
 import { CartContext } from "../../Contexts/CartProvider";
+import { LocalOfferOutlined, AssignmentReturnOutlined,AttachMoneyOutlined } from "@material-ui/icons";
 
 export const ProductDetail = ({ refItem, fetchURL }) => {
   const navigate = useNavigate()

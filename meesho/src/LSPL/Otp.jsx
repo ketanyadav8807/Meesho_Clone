@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import style from "../CSS/signup.module.css"
+import OtpInput from 'react-otp-input';
+import { useNavigate } from 'react-router-dom';
 
 export const Otp = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [otpInp, setotpInp] = useState("")
   const handleChange = (otpIn) => {
       setotpInp(otpIn);
   }
-  
 
     const otp = Math.floor(100000 + Math.random() * 900000);
     const [num, setNum] = useState("");
@@ -62,7 +63,6 @@ export const Otp = () => {
                     inputStyle={{width: "45px", outline: "none" , border: "none" , borderBottom: "1.5px solid grey", marginRight: "10px", marginTop: "65px", fontSize: "17px", fontWeight: "550", lineHeight: "40px"}}
                 />
 
-                
                 <div className={style.time}>{time > 0 ? `Resend OTP in ${time} s` : ""}</div>
                 <div><h4 className={style.ChangeNumm}>{time === 0 ? "RESEND OTP" : ""}</h4></div>
                 <div><button className={style.SendOTP}>Verify</button></div>

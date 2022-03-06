@@ -4,6 +4,7 @@ import { IndItem } from '../Components/IndItem';
 import { Loading } from '../Components/Loading';
 import { CartContext } from '../Contexts/CartProvider';
 import "../CSS/Cart.css"
+import { CheckoutContext } from "../Context/CheckoutContext";
 
 export const Cart = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ export const Cart = () => {
   const [cart, setCart] = useState([])
   const [removeId, setRemoveId] = useState(null)
   const [open, setOpen] = useState(false)
+  const { handleNext } = useContext(CheckoutContext);
 
   const getCartData = () => {
     setIsLoading(true);
@@ -191,7 +193,7 @@ console.log(charges)
                <p className='total'>Order Total</p>
                <p className="totalCharge">{totalCharges + deliveryCharge - discount}</p>
                </div>
-            <div className='continueBtn' onClick={() => navigate("/checkout/address")}>
+            <div className='continueBtn' onClick={() => handleNext()}>
               <p>Continue</p>
             </div>
             </div>
