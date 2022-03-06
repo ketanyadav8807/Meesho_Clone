@@ -82,8 +82,6 @@ export const SingleProduct = ({
             >
               <Typography
                 variant="h5"
-                omponent="div"
-                color="gray"
                 align="left"
                 color="black"
                 component="p"

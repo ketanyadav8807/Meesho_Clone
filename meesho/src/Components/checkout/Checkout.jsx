@@ -20,7 +20,7 @@ export const Checkout = () => {
   return (
     <div>
       <div style={{ margin: "1%", padding: "1%", display: "flex" }}>
-        <img src={logo} height="36px" alt="logo" />
+        
         <Stepper className={c.root} activeStep={activeStep} alternativeLabel>
           {steps.map((label, index) => (
             <Step key={label} completed={completed[index]}>
