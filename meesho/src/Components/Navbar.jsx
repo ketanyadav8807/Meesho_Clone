@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react'
-import '../CSS/Navbar.css'
-import '../Resp-css/Navbar-Resp.css'
+import React, { useState, useEffect, useContext } from "react";
+import "../CSS/Navbar.css";
+import "../Resp-css/Navbar-Resp.css";
 import {
   ShoppingCartOutlined,
   PersonOutline,
@@ -11,66 +11,65 @@ import {
   LocalMallOutlined,
   AccountCircle,
   Menu,
-} from '@material-ui/icons'
-import { CartContext } from '../Contexts/CartProvider'
-import { useNavigate, useLocation } from 'react-router-dom'
-import { Loading } from './Loading'
-import { DrawerUI } from './DrawerUI'
+} from "@material-ui/icons";
+import { CartContext } from "../Contexts/CartProvider";
+import { useNavigate } from "react-router-dom";
+import { Loading } from "./Loading";
+import { DrawerUI } from "./DrawerUI";
 
 export const Navbar = () => {
-  const location = useLocation()
-  const navigate = useNavigate()
-  const { count, getCount } = useContext(CartContext)
-  const [search, setSearch] = useState('')
-  const [state, setState] = useState(false)
-  const [width, setWidth] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate();
+  const { count, getCount } = useContext(CartContext);
+  const [search, setSearch] = useState("");
+  const [state, setState] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
-  let authToken = JSON.parse(localStorage.getItem('userToken'))
-  let isLoggedIn = false
+  let authToken = JSON.parse(localStorage.getItem("userToken"));
+  let isLoggedIn = false;
   if (authToken) {
-    isLoggedIn = true
+    isLoggedIn = true;
   }
 
   useEffect(() => {
-    window.addEventListener('resize', reportWindowSize)
-    getCount()
+    window.addEventListener("resize", reportWindowSize);
+    getCount();
     return () => {
-      window.removeEventListener('resize', reportWindowSize)
-    }
-  }, [])
+      window.removeEventListener("resize", reportWindowSize);
+    };
+  }, []);
 
   const reportWindowSize = () => {
-    setWidth(window.innerWidth)
-  }
+    setWidth(window.innerWidth);
+  };
 
   const handleChange = (e) => {
-    const { value } = e.currentTarget
-    setSearch(value)
-  }
+    const { value } = e.currentTarget;
+    setSearch(value);
+  };
 
   const handleCancel = () => {
-    setSearch('')
-  }
+    setSearch("");
+  };
 
   const handleLogout = () => {
-    setIsLoading(true)
-    localStorage.removeItem('userToken')
+    setIsLoading(true);
+    localStorage.removeItem("userToken");
     setTimeout(() => {
-      setIsLoading(false)
-    }, 500)
-  }
+      setIsLoading(false);
+    }, 500);
+  };
 
-  if (isLoading) return <Loading />
+  if (isLoading) return <Loading />;
   return (
     <div className="contactBox">
       <div className="leftView">
-        <div className="title" onClick={() => navigate('/')}>
-          <img src={require('../images/meeshoLogo.png')} alt="" />
+        <div className="title" onClick={() => navigate("/")}>
+          <img src={require("../images/meeshoLogo.png")} alt="" />
         </div>
         <div className="inputField">
           <SearchOutlined
-            style={{ fontSize: width < '1145' ? 35 : 40 }}
+            style={{ fontSize: width < "1145" ? 35 : 40 }}
             className="searchIcon"
           />
           <input
@@ -82,7 +81,7 @@ export const Navbar = () => {
           />
           {search.length !== 0 && (
             <CloseOutlined
-              style={{ fontSize: 30, color: '#666666' }}
+              style={{ fontSize: 30, color: "#666666" }}
               className="closeIcon"
               onClick={handleCancel}
             />
@@ -95,15 +94,22 @@ export const Navbar = () => {
           <div className="app">
             <PhoneAndroidOutlined
               style={{
-                fontSize: width < '1335' ? 25 : width < '1145' ? 22 : 30,
-                color: '#666666',
+                fontSize: width < "1335" ? 25 : width < "1145" ? 22 : 30,
+                color: "#666666",
               }}
             />
-            <h3>Download App</h3>
+            <h3
+              onClick={() =>
+                (window.location.href =
+                  "https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow")
+              }
+            >
+              Download App
+            </h3>
           </div>
           <span className="vrDivider"></span>
           <div className="cdd">
-            <h3>Become a Supplier</h3>
+            <h3 onClick={() => navigate("notfound/becomeasupplier")}>Become a Supplier</h3>
           </div>
           <span className="vrDivider"></span>
         </div>
@@ -111,9 +117,9 @@ export const Navbar = () => {
           <div className="profile">
             <PersonOutline
               style={{
-                fontSize: width < '1145' ? 30 : 35,
-                paddingTop: width < '1145' ? 2 : 0,
-                color: '#666666',
+                fontSize: width < "1145" ? 30 : 35,
+                paddingTop: width < "1145" ? 2 : 0,
+                color: "#666666",
               }}
             />
             <h3>Profile</h3>
@@ -121,7 +127,7 @@ export const Navbar = () => {
               {isLoggedIn ? (
                 <>
                   <div className="userView">
-                    <AccountCircle style={{ fontSize: 60, color: '#f7f9ff' }} />
+                    <AccountCircle style={{ fontSize: 60, color: "#f7f9ff" }} />
                     <div className="userContent">
                       <h2>Hello User</h2>
                       <p>+8605817892</p>
@@ -130,13 +136,13 @@ export const Navbar = () => {
                   <div className="hrDivider1"></div>
                   <div className="logoutView">
                     <LocalMallOutlined
-                      style={{ fontSize: 30, color: 'black' }}
+                      style={{ fontSize: 30, color: "black" }}
                     />
                     <p>My Orders</p>
                   </div>
                   <div className="hrDivider1"></div>
                   <div className="logoutView" onClick={() => handleLogout()}>
-                    <ExitToApp style={{ fontSize: 30, color: 'black' }} />
+                    <ExitToApp style={{ fontSize: 30, color: "black" }} />
                     <p>Logout</p>
                   </div>
                 </>
@@ -150,14 +156,14 @@ export const Navbar = () => {
                   </div>
                   <div
                     className="newSignUpBtn"
-                    onClick={() => navigate('/auth/signup')}
+                    onClick={() => navigate("/auth/signup")}
                   >
                     <p>Sign Up</p>
                   </div>
                   <div className="hrDivider1"></div>
                   <div className="logoutView">
                     <LocalMallOutlined
-                      style={{ fontSize: 30, color: 'black' }}
+                      style={{ fontSize: 30, color: "black" }}
                     />
                     <p>My Orders</p>
                   </div>
@@ -168,7 +174,7 @@ export const Navbar = () => {
           <div
             className="dd"
             onClick={() =>
-              isLoggedIn ? navigate('/checkout/cart') : navigate('/auth/signup')
+              isLoggedIn ? navigate("/checkout/cart") : navigate("/auth/signup")
             }
           >
             {count > 0 && (
@@ -177,7 +183,7 @@ export const Navbar = () => {
               </div>
             )}
             <ShoppingCartOutlined
-              style={{ fontSize: width < '1145' ? 30 : 35, color: '#666666' }}
+              style={{ fontSize: width < "1145" ? 30 : 35, color: "#666666" }}
             />
             <h3>Cart</h3>
           </div>
@@ -185,12 +191,12 @@ export const Navbar = () => {
       </div>
       <div className="respContactBox">
         <Menu
-          style={{ fontSize: 30, color: 'black' }}
+          style={{ fontSize: 30, color: "black" }}
           onClick={() => setState(true)}
         />
         <div className="dd">
           <ShoppingCartOutlined
-            style={{ fontSize: width < '1145' ? 30 : 35, color: '#666666' }}
+            style={{ fontSize: width < "1145" ? 30 : 35, color: "#666666" }}
           />
         </div>
       </div>
@@ -202,5 +208,5 @@ export const Navbar = () => {
         handleLogout={handleLogout}
       />
     </div>
-  )
-}
+  );
+};

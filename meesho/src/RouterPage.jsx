@@ -3,7 +3,7 @@ import { Product } from "./Components/PageProducts/Product";
 import { ProductDetail } from "./Components/productDetails/ProductDetail";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Home from "./Pages/Home";
-
+import { NotFound } from "./Pages/NotFound";
 
 export const RouterPage = (props) => {
   return (
@@ -12,9 +12,12 @@ export const RouterPage = (props) => {
       <Outlet />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path=":id" element={
+        <Route
+          path=":id"
+          element={
             <ProductDetail fetchURL={"https://meesho-db.herokuapp.com/Men/"} />
-        } />
+          }
+        />
         <Route
           path="/Men"
           element={<Product fetchURL={"https://meesho-db.herokuapp.com/Men"} />}
@@ -146,6 +149,7 @@ export const RouterPage = (props) => {
             />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

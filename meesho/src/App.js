@@ -32,9 +32,10 @@ function App() {
     <div className="container">
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/*" element={<Dashboard />} />
+          <Route index path="/*" element={<Dashboard />} />
           <Route path="/checkout/*" element={<Checkout />} />
           <Route path="/auth/*" element={<Auth />} />
+          <Route path="*" element={<Auth />} />
         </Routes>
       </ThemeProvider>
 
