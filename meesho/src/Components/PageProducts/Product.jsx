@@ -30,6 +30,7 @@ export const Product = ({ fetchURL }) => {
   const title = location.replace("_", " ");
   getCount();
   useEffect(() => {
+    setTotal(0);
     setBegin(0);
     setEnd(8);
     fetch(`${fetchURL}`)
@@ -42,11 +43,12 @@ export const Product = ({ fetchURL }) => {
         console.log(err);
         setIsDataLoading(false);
       });
-  }, []);
+      console.log(end);
+  }, [fetchURL]);
   document.title = title;
   const NextButton = () => {
     document.documentElement.scrollTop = 0;
-    return end == total ? (
+    return end >= total ? (
       <></>
     ) : (
       <Button color="primary" sx={{ fontWeight: 700 }} onClick={() => next()}>
@@ -76,11 +78,19 @@ export const Product = ({ fetchURL }) => {
         console.log(err);
         setIsDataLoading(false);
       });
+      console.log(end);
   }, [begin, end, fetchURL]);
 
   const next = () => {
-    setBegin((prev) => prev + 8);
-    setEnd((prev) => prev + 8);
+    if(total >= 8){
+      setBegin((prev) => prev + 8);
+      setEnd((prev) => prev + 8);
+    }
+    else{
+      setBegin((prev) => prev + total);
+    setEnd((prev) => prev + total);
+    }
+    
   };
   const prev = () => {
     if (begin >= 8) {
@@ -88,6 +98,7 @@ export const Product = ({ fetchURL }) => {
       setEnd((prev) => prev - 8);
     }
   };
+  
   return (
     <>
       {!isDataLoading ? (
@@ -174,7 +185,7 @@ export const Product = ({ fetchURL }) => {
         sx={{ display: "flex", margin: "4% auto", justifyContent: "center" }}
       >
         <Pagination
-          count={Math.round(total / 8)}
+          count={Math.ceil(total / 8)}
           color="primary"
           sx={{ textAlign: "center" }}
           onChange={({ event, value }) => setPage(value)}
