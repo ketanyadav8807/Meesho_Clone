@@ -189,6 +189,11 @@
         font-size: 20px;
     }
 
+    .ResellerContentView{
+    height: 50%;
+    margin-top: 5%;
+    }
+
     .downloadApp {
         width: 350px;
         height: 50px;
@@ -261,23 +266,32 @@
 
     .homeContainer {
         padding: 0px 0px;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: auto;
     }
 
     .mainDiv {
         margin: 0;
-        padding: 0;
+        padding: 2px;
         width: 100%;
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
     }
 
     .mainContentDiv {
+        width: 100%;
         height: 380px;
         padding: 50px;
         align-items: center;
     }
 
     .mainImageDiv img {
+        width: 100%;
         height: 400px;
+        resize: cover;
     }
 
     .mainContentTitle {
@@ -304,21 +318,31 @@
 }
 
 @media (min-width:320px) and (max-width:424px) {
+    body{
+        width: 100%;
+    }
     .category {
         display: none;
     }
 
     .homeContainer {
-        padding: 0px 0px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     .mainDiv {
         margin: 0;
-        padding: 0;
-        grid-template-columns: 1fr;
+        padding: 2px;
+        width: 100%;
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
     }
 
     .mainContentDiv {
+        width: 100%;
         height: 380px;
         margin: 0;
         padding: 50px;
@@ -326,9 +350,9 @@
     }
 
     .mainImageDiv img {
-        margin: 0;
-        padding: 0;
+        width: 100%;
         height: 400px;
+        resize: cover;
     }
 
     .mainContentTitle {
