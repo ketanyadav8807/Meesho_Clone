@@ -172,10 +172,14 @@ export const Navbar = () => {
               isLoggedIn ? navigate('/checkout/cart') : navigate('/auth/signup')
             }
           >
-            {count > 0 && (
-              <div className="count">
-                <p>{count}</p>
-              </div>
+            {isLoggedIn && (
+              <>
+                {count > 0 && (
+                  <div className="count">
+                    <p>{count}</p>
+                  </div>
+                )}
+              </>
             )}
             <ShoppingCartOutlined
               style={{ fontSize: width < '1145' ? 30 : 35, color: '#666666' }}
