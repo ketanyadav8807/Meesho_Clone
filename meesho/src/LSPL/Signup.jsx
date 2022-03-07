@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { authentication } from '../firebase';
 import { RecaptchaVerifier, signInWithPhoneNumber  } from "firebase/auth";
 import { AuthContext } from '../Contexts/AuthProvider';
+import { useSnackbar } from "react-simple-snackbar";
+
 
   export const Signup = () => {
   const navigate = useNavigate();
@@ -39,6 +41,21 @@ import { AuthContext } from '../Contexts/AuthProvider';
       }, authentication);
     }
 
+    const options = {
+      position: "top-center",
+      style: {
+        backgroundColor: "#2e7d32",
+        border: "2px solid #2e7d32",
+        color: "white",
+        borderRadius: "15px",
+        fontSize: "20px",
+        textAlign: "center",
+      },
+      closeStyle: {
+        fontSize: "16px",
+      },
+    };
+    const [openSnackbar, closeSnackbar] = useSnackbar(options);
     const sendOtp = () => {
          if(phoneNum.length === 10){
           let phoneNumber = `+91${phoneNum}`
@@ -48,6 +65,7 @@ import { AuthContext } from '../Contexts/AuthProvider';
         signInWithPhoneNumber(authentication, phoneNumber, appVerifier)
         .then(confirmationResult => {
           setResult(confirmationResult)
+          openSnackbar("Otp sent successfully!");
           navigate("/auth/otp")
         }).catch((error) => {
           console.log(error)
