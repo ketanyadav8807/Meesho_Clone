@@ -54,18 +54,20 @@ export const Navbar = () => {
 
   const displaySearch = async (e) => {
     let searchedData = [];
-    let resp = await endpoints
-      .map(
-        async(endpoint) => await fetch(`https://meesho-db.herokuapp.com/${endpoint}?q=${search}`).then((res) => res.json()).then((data) => {
-        if (data.length != 0) {
-          searchedData.push(data);
-        }
-      })
-      .catch((err) => console.log(err))
-      )
+    let resp = await endpoints.map(
+      async (endpoint) =>
+        await fetch(`https://meesho-db.herokuapp.com/${endpoint}?q=${search}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.length != 0) {
+              searchedData.push(data);
+            }
+          })
+          .catch((err) => console.log(err))
+    );
 
     Promise.all(resp)
-      .then(() => navigate("/DisplaySearchedProducts", { state:searchedData }))
+      .then(() => navigate("/DisplaySearchedProducts", { state: searchedData }))
       .catch((err) => console.log(err));
   };
 
