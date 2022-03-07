@@ -1,36 +1,36 @@
-import React, { useContext, useEffect, useState } from "react";
-import style from "../CSS/signup.module.css";
-import OtpInput from "react-otp-input";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../Contexts/AuthProvider";
-import { useSnackbar } from "react-simple-snackbar";
+import React, { useContext, useEffect, useState } from 'react'
+import style from '../CSS/signup.module.css'
+import OtpInput from 'react-otp-input'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../Contexts/AuthProvider'
+import { useSnackbar } from 'react-simple-snackbar'
 export const Otp = () => {
-  const navigate = useNavigate();
-  const { result, getToken } = useContext(AuthContext);
-  const [otpInp, setOtpInp] = useState("");
+  const navigate = useNavigate()
+  const { result, getToken } = useContext(AuthContext)
+  const [otpInp, setOtpInp] = useState('')
 
   const options = {
-    position: "top-center",
+    position: 'top-center',
     style: {
-      backgroundColor: "#2e7d32",
-      border: "2px solid #2e7d32",
-      color: "white",
-      borderRadius: "15px",
-      fontSize: "20px",
-      textAlign: "center",
+      backgroundColor: '#2e7d32',
+      border: '2px solid #2e7d32',
+      color: 'white',
+      borderRadius: '15px',
+      fontSize: '20px',
+      textAlign: 'center',
     },
     closeStyle: {
-      fontSize: "16px",
+      fontSize: '16px',
     },
-  };
+  }
 
-  const [openSnackbar, closeSnackbar] = useSnackbar(options);
+  const [openSnackbar, closeSnackbar] = useSnackbar(options)
 
   const handleChange = (otpin) => {
-    setOtpInp(otpin);
-  };
+    setOtpInp(otpin)
+  }
 
-  useEffect(() => {}, []);
+  useEffect(() => {}, [])
 
   const handleVerify = () => {
     if (otpInp.length === 6) {
@@ -38,22 +38,23 @@ export const Otp = () => {
         .confirm(otpInp)
         .then((result) => {
           // User signed in successfully.
-          openSnackbar("Logged in successfully!");
-          navigate("/checkout/cart");
-          const user = result.user;
-          console.log(user.uid);
-          localStorage.setItem("userToken", JSON.stringify(user.uid));
-          getToken();
+          console.log(result)
+          openSnackbar('Logged in successfully!')
+          navigate('/checkout/cart')
+          const user = result.user
+          console.log(user.uid)
+          localStorage.setItem('userToken', JSON.stringify(user.uid))
+          getToken()
           // ...
         })
         .catch((error) => {
           // User couldn't sign in (bad verification code?)
           // ...
-          console.log(error);
-          window.location.reload();
-        });
+          console.log(error)
+          window.location.reload()
+        })
     }
-  };
+  }
 
   return (
     <div className={style.body}>
@@ -74,15 +75,15 @@ export const Otp = () => {
             onChange={handleChange}
             numInputs={6}
             inputStyle={{
-              width: "45px",
-              outline: "none",
-              border: "none",
-              borderBottom: "1.5px solid grey",
-              marginRight: "10px",
-              marginTop: "65px",
-              fontSize: "17px",
-              fontWeight: "550",
-              lineHeight: "40px",
+              width: '45px',
+              outline: 'none',
+              border: 'none',
+              borderBottom: '1.5px solid grey',
+              marginRight: '10px',
+              marginTop: '65px',
+              fontSize: '17px',
+              fontWeight: '550',
+              lineHeight: '40px',
             }}
           />
           <div>
@@ -97,11 +98,11 @@ export const Otp = () => {
             By continuing, you agree to Meesho’s
           </div>
           <div className={style.lowerPartLoww}>
-            <span className={style.textColor}>Terms & Conditions</span> and{" "}
+            <span className={style.textColor}>Terms & Conditions</span> and{' '}
             <span className={style.textColor}>Privacy Policy</span>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
